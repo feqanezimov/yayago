@@ -136,7 +136,7 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
     <section className="py-8 bg-gray-50 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
-        <Link href={`/cars/${carId}`} className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-6">
+        <Link href={`/cars/${carId}`} className="inline-flex items-center text-destructive hover:text-destructive/80 transition-colors mb-6">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Car Details
         </Link>
@@ -148,19 +148,19 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
               <div key={step.number} className="flex items-center">
                 <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-colors ${
                   currentStep >= step.number
-                    ? 'bg-primary border-primary text-white'
+                    ? 'bg-destructive border-destructive text-white'
                     : 'border-gray-300 text-gray-500'
                 }`}>
                   <step.icon className="h-5 w-5" />
                 </div>
                 <span className={`ml-2 text-sm font-medium ${
-                  currentStep >= step.number ? 'text-primary' : 'text-gray-500'
+                  currentStep >= step.number ? 'text-destructive' : 'text-gray-500'
                 }`}>
                   {step.title}
                 </span>
                 {index < steps.length - 1 && (
                   <div className={`w-16 h-0.5 mx-4 ${
-                    currentStep > step.number ? 'bg-primary' : 'bg-gray-300'
+                    currentStep > step.number ? 'bg-destructive' : 'bg-gray-300'
                   }`} />
                 )}
               </div>
@@ -186,7 +186,7 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="pickupDate" className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 text-primary" />
+                          <Calendar className="h-4 w-4 text-destructive" />
                           Pickup Date *
                         </Label>
                         <Input
@@ -200,7 +200,7 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="pickupTime" className="flex items-center gap-2">
-                          <Clock className="h-4 w-4 text-primary" />
+                          <Clock className="h-4 w-4 text-destructive" />
                           Pickup Time
                         </Label>
                         <Input
@@ -238,7 +238,7 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <Label htmlFor="pickupLocation" className="flex items-center gap-2">
-                          <MapPin className="h-4 w-4 text-primary" />
+                          <MapPin className="h-4 w-4 text-destructive" />
                           Pickup Location *
                         </Label>
                         <Select value={formData.pickupLocation} onValueChange={(value) => handleInputChange('pickupLocation', value)}>
@@ -310,7 +310,7 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="email" className="flex items-center gap-2">
-                          <Mail className="h-4 w-4 text-primary" />
+                          <Mail className="h-4 w-4 text-destructive" />
                           Email Address *
                         </Label>
                         <Input
@@ -323,7 +323,7 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone" className="flex items-center gap-2">
-                          <Phone className="h-4 w-4 text-primary" />
+                          <Phone className="h-4 w-4 text-destructive" />
                           Phone Number *
                         </Label>
                         <Input
@@ -377,18 +377,18 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
                       <div className="grid grid-cols-2 gap-4">
                         <div
                           className={`p-4 border-2 rounded-xl cursor-pointer transition-colors ${
-                            formData.paymentMethod === 'card' ? 'border-primary bg-primary/5' : 'border-gray-200'
+                            formData.paymentMethod === 'card' ? 'border-destructive bg-destructive/5' : 'border-gray-200'
                           }`}
                           onClick={() => handleInputChange('paymentMethod', 'card')}
                         >
                           <div className="flex items-center gap-3">
-                            <CreditCard className="h-5 w-5 text-primary" />
+                            <CreditCard className="h-5 w-5 text-destructive" />
                             <span className="font-medium">Credit/Debit Card</span>
                           </div>
                         </div>
                         <div
                           className={`p-4 border-2 rounded-xl cursor-pointer transition-colors ${
-                            formData.paymentMethod === 'cash' ? 'border-primary bg-primary/5' : 'border-gray-200'
+                            formData.paymentMethod === 'cash' ? 'border-destructive bg-destructive/5' : 'border-gray-200'
                           }`}
                           onClick={() => handleInputChange('paymentMethod', 'cash')}
                         >
@@ -475,9 +475,9 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
                       />
                       <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
                         I agree to the{' '}
-                        <Link href="/terms" className="text-primary hover:underline">Terms & Conditions</Link>
+                        <Link href="/terms" className="text-destructive hover:underline">Terms & Conditions</Link>
                         {' '}and{' '}
-                        <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
+                        <Link href="/privacy" className="text-destructive hover:underline">Privacy Policy</Link>
                       </label>
                     </div>
                   </div>
@@ -585,7 +585,7 @@ export function BookingForm({ carId, initialFormData }: BookingFormProps) {
                   className="w-20 h-16 object-cover rounded-xl"
                 />
                 <div className="flex-1">
-                  <h4 className="font-bold text-gray-900">{car.name}</h4>
+                  <h4 className="font-bold text-gray-900 text-sm">{car.name}</h4>
                   <p className="text-sm text-gray-600">{car.category}</p>
                   <p className="text-sm text-gray-500">Owner</p>
                 </div>
