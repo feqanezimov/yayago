@@ -18,18 +18,20 @@ export function Navigation() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
-          {/* Left side: Hamburger menu and Logo */}
-          <div className="flex items-center space-x-4">
+          {/* Left: Hamburger menu */}
+          <div className="flex items-center">
             <Button
               variant="ghost"
               size="lg"
-              onClick={() => setIsOpen(!isOpen)} // Toggle isOpen
+              onClick={() => setIsOpen(!isOpen)}
               className="text-gray-900"
             >
               <Menu className="h-6 w-6" />
             </Button>
+          </div>
 
-            {/* Logo */}
+          {/* Center: Logo */}
+          <div className="flex-1 flex justify-center">
             <Link href="/" className="flex items-center space-x-2 group">
               <img
                 src="/upscalemedia-transformed (1)(1).png"
@@ -39,8 +41,8 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* Right side: Header Search Bar (desktop only) */}
-          <div className="flex items-center space-x-4">
+          {/* Right: Search Bar */}
+          <div className="flex items-center">
             <HeaderSearchBar />
           </div>
         </div>
