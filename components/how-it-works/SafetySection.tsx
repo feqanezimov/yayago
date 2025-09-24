@@ -67,7 +67,7 @@ export function SafetySection() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start space-x-4">
-                  <div className="inline-flex p-3 rounded-xl bg-primary/10 text-primary shrink-0">
+                  <div className="inline-flex p-3 rounded-xl bg-destructive/10 text-destructive shrink-0">
                     <feature.icon className="h-6 w-6" />
                   </div>
                   <div>
@@ -110,8 +110,8 @@ export function SafetySection() {
             </div>
 
             {/* Trust Badge */}
-            <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-6 text-center">
-              <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+            <div className="bg-gradient-to-r from-destructive/10 to-destructive/5 rounded-2xl p-6 text-center">
+              <Shield className="h-12 w-12 text-destructive mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-gray-900 mb-2">
                 UAE Licensed & Regulated
               </h4>
@@ -135,7 +135,7 @@ export function SafetySection() {
               <button className="gradient-primary text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-shadow">
                 Contact Safety Team
               </button>
-              <button className="border border-primary text-primary px-6 py-3 rounded-xl font-medium hover:bg-primary/5 transition-colors">
+              <button className="border border-destructive text-destructive px-6 py-3 rounded-xl font-medium hover:bg-destructive/5 transition-colors">
                 View Safety Guidelines
               </button>
             </div>
