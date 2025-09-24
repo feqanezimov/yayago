@@ -100,7 +100,7 @@ export function MyServices() {
       case 'completed':
         return <Badge className="bg-green-100 text-green-800">Completed</Badge>;
       case 'confirmed':
-        return <Badge className="bg-blue-100 text-blue-800">Confirmed</Badge>;
+        return <Badge className="bg-red-100 text-red-800">Confirmed</Badge>;
       case 'pending':
         return <Badge className="bg-orange-100 text-orange-800">Pending</Badge>;
       case 'cancelled':
@@ -177,7 +177,7 @@ export function MyServices() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
-                      <Calendar className="h-5 w-5 text-primary" />
+                      <Calendar className="h-5 w-5 text-destructive" />
                       <span className="font-medium text-gray-900">Appointment</span>
                     </div>
                     <div className="ml-7">
@@ -188,7 +188,7 @@ export function MyServices() {
 
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-5 w-5 text-primary" />
+                      <MapPin className="h-5 w-5 text-destructive" />
                       <span className="font-medium text-gray-900">Location</span>
                     </div>
                     <div className="ml-7">
