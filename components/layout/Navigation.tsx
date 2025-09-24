@@ -18,8 +18,8 @@ export function Navigation() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
-          {/* Left side: Hamburger menu for small screens and Logo */}
-          <div className="flex items-center space-x-4"> {/* Added space-x-4 for spacing between hamburger and logo */}
+          {/* Left side: Hamburger menu and Logo */}
+          <div className="flex items-center space-x-4"> {/* Hamburger və loqo üçün sol tərəf */}
             <Button
               variant="ghost"
               size="lg"
@@ -29,8 +29,7 @@ export function Navigation() {
               <Menu className="h-6 w-6" />
             </Button>
 
-            {/* Logo - now part of the flex flow, on the left */}
-            {/* Removed absolute positioning to prevent overlap and align left as per image */}
+            {/* Logo - hamburger menyusunun yanında */}
             <Link href="/" className="flex items-center space-x-2 group">
               <img
                 src="/upscalemedia-transformed (1)(1).png"
@@ -41,10 +40,9 @@ export function Navigation() {
           </div>
 
           {/* Right side: Header Search Bar (desktop only) */}
-          {/* Sign In and Dashboard buttons are removed from here as per user request */}
           <div className="flex items-center space-x-4">
             <HeaderSearchBar /> {/* Böyük ekranlarda görünür, kiçik ekranlarda gizli */}
-            {/* Sign In and Dashboard buttons are moved to the sidebar */}
+            {/* "Sign In" və "Dashboard" düymələri buradan silindi */}
           </div>
         </div>
       </nav>
