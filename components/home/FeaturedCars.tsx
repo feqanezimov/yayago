@@ -163,8 +163,3 @@ export function FeaturedCars() {
     </section>
   );
 }
-
-
-
-
-
