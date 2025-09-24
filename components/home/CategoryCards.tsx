@@ -17,7 +17,7 @@ const categories = [
     startingPrice: 89,
     popular: true,
     image: 'https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-    gradient: 'from-blue-500 to-blue-600'
+    gradient: 'from-red-500 to-red-600'
   },
   {
     icon: Crown,
@@ -26,7 +26,7 @@ const categories = [
     startingPrice: 299,
     popular: true,
     image: 'https://images.pexels.com/photos/3802508/pexels-photo-3802508.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
-    gradient: 'from-purple-500 to-purple-600'
+    gradient: 'from-red-500 to-red-600'
   },
   {
     icon: Zap,
@@ -138,7 +138,7 @@ export function CategoryCards() {
             <Button size="lg" className="gradient-primary text-white hover:shadow-lg transition-shadow mr-4">
               List Your Car
             </Button>
-            <Button size="lg" variant="outline" className="border-primary/20 text-primary hover:bg-primary/5">
+            <Button size="lg" variant="outline" className="border-destructive/20 text-destructive hover:bg-destructive/5">
               Learn More
             </Button>
           </div>
