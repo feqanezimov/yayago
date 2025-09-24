@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
-import { Navigation } from '@/components/layout/Navigation';
+// import { Navigation } from '@/components/layout/Navigation'; // Navigation importu silindi
 
 export const metadata: Metadata = {
   title: 'Yayago - 0% Commission Car Rental Platform | Peer-to-Peer Car Sharing Dubai',
@@ -19,8 +19,8 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" />
       </head>
-      <body style={{ fontFamily: 'Inter, sans-serif' }}>
-        <Navigation />
+      <body className="bg-black">
+        {/* <Navigation /> // Navigation komponenti silindi */}
         <main>{children}</main>
         <Toaster />
       </body>
