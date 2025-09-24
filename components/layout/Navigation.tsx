@@ -24,7 +24,7 @@ export function Navigation() {
               variant="ghost"
               size="lg"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white"
+              className="text-white hover:text-white hover:bg-transparent"
             >
               <Menu className="h-6 w-6" />
             </Button>
