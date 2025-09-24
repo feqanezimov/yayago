@@ -33,7 +33,7 @@ export function HeroSection() {
     <section className="bg-black py-8"> {/* Outer section for overall background and vertical spacing */}
       <div className="hero-bg relative overflow-hidden rounded-3xl shadow-2xl w-full mx-auto min-h-[80vh] flex items-center"> {/* New container for image, rounded corners, shadow */}
         {/* Integrated Navigation Bar */}
-        <nav className="absolute top-0 left-0 right-0 z-50 glass border-b border-white/10">
+        <nav className="absolute top-0 left-0 right-0 z-50 bg-gray-900 border-b border-white/10"> {/* glass sinfi silindi, bg-gray-900 əlavə edildi */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
             {/* Left: Hamburger menu and its dropdown */}
             <div className="relative flex items-center">
@@ -48,7 +48,7 @@ export function HeroSection() {
 
               {/* Dropdown Menu */}
               <div
-                className={`absolute top-full left-0 mt-2 w-64 glass rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top text-white ${
+                className={`absolute top-full left-0 mt-2 w-64 bg-gray-900 rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top text-white ${ // glass sinfi silindi, bg-gray-900 əlavə edildi
                   isOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'
                 }`}
               >
