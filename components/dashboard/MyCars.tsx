@@ -92,7 +92,7 @@ export function MyCars() {
       case 'active':
         return <Badge className="bg-green-100 text-green-800">Active</Badge>;
       case 'rented':
-        return <Badge className="bg-blue-100 text-blue-800">Currently Rented</Badge>;
+        return <Badge className="bg-red-100 text-red-800">Currently Rented</Badge>;
       case 'maintenance':
         return <Badge className="bg-orange-100 text-orange-800">Maintenance</Badge>;
       case 'paused':
@@ -186,11 +186,11 @@ export function MyCars() {
                     <div className="text-sm text-gray-600">Earned</div>
                   </div>
                   <div className="bg-gray-50 rounded-xl p-4 text-center">
-                    <div className="text-lg font-bold text-blue-600">{car.stats.rating}</div>
+                    <div className="text-lg font-bold text-red-600">{car.stats.rating}</div>
                     <div className="text-sm text-gray-600">Rating</div>
                   </div>
                   <div className="bg-gray-50 rounded-xl p-4 text-center">
-                    <div className="text-lg font-bold text-purple-600">{car.stats.reviews}</div>
+                    <div className="text-lg font-bold text-red-600">{car.stats.reviews}</div>
                     <div className="text-sm text-gray-600">Reviews</div>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export function MyCars() {
                 {/* Availability and Next Booking */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-gray-50 rounded-xl">
                   <div className="flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-primary" />
+                    <Clock className="h-5 w-5 text-destructive" />
                     <span className="font-medium">{car.availability}</span>
                   </div>
                   {car.nextBooking && (
@@ -280,14 +280,14 @@ export function MyCars() {
             </div>
             
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">
+              <div className="text-3xl font-bold text-red-600 mb-2">
                 {(cars.reduce((sum, car) => sum + car.stats.rating, 0) / cars.length).toFixed(1)}
               </div>
               <div className="text-gray-600">Average Rating</div>
             </div>
             
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">
+              <div className="text-3xl font-bold text-red-600 mb-2">
                 {cars.filter(car => car.status === 'active').length}
               </div>
               <div className="text-gray-600">Active Cars</div>
