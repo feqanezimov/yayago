@@ -10,7 +10,7 @@ import {
 
 export function AboutHero() {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-destructive/10 to-destructive/5 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 pattern-dots opacity-30" />
       
@@ -29,8 +29,8 @@ export function AboutHero() {
             {/* Key Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-primary" />
+                <div className="w-16 h-16 bg-destructive/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-destructive" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900">1000+</div>
                 <div className="text-gray-600">Verified Owners</div>
@@ -45,8 +45,8 @@ export function AboutHero() {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Globe className="h-8 w-8 text-blue-600" />
+                <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Globe className="h-8 w-8 text-red-600" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900">3</div>
                 <div className="text-gray-600">Languages</div>
@@ -69,7 +69,6 @@ export function AboutHero() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }
