@@ -141,7 +141,7 @@ export function HeroSection() {
         {/* Background Pattern */}
         <div className="absolute inset-0 pattern-dots opacity-30" />
 
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 w-full"> {/* Content container, pt-16 əlavə edildi */}
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-16 pt-16 pb-20 w-full"> {/* lg:px-8 dəyişdirildi */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-white space-y-8 animate-fade-in">
