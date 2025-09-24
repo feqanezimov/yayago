@@ -124,7 +124,7 @@ export function Navigation() {
       {/* Arxa Plan Karartma Katmanı */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 ease-in-out"
+          className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ease-in-out"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
