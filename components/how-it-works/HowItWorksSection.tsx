@@ -98,13 +98,13 @@ export function HowItWorksSection() {
               >
                 {/* Step Number */}
                 <div className="absolute -top-4 left-8">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-12 h-12 bg-destructive rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {index + 1}
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="inline-flex p-4 rounded-2xl bg-primary/10 text-primary">
+                  <div className="inline-flex p-4 rounded-2xl bg-destructive/10 text-destructive">
                     <step.icon className="h-8 w-8" />
                   </div>
                   
@@ -149,7 +149,7 @@ export function HowItWorksSection() {
               >
                 {/* Step Number */}
                 <div className="absolute -top-4 left-8">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {index + 1}
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export function HowItWorksSection() {
             <Button size="lg" className="gradient-primary text-white hover:shadow-lg transition-shadow px-8">
               Find a Car
             </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5 px-8">
+            <Button size="lg" variant="outline" className="border-destructive text-destructive hover:bg-destructive/5 px-8">
               List Your Car
             </Button>
           </div>
