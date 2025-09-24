@@ -92,7 +92,7 @@ export function MyRentals() {
       case 'completed':
         return <Badge className="bg-green-100 text-green-800">Completed</Badge>;
       case 'active':
-        return <Badge className="bg-blue-100 text-blue-800">Active</Badge>;
+        return <Badge className="bg-red-100 text-red-800">Active</Badge>;
       case 'upcoming':
         return <Badge className="bg-orange-100 text-orange-800">Upcoming</Badge>;
       default:
@@ -166,7 +166,7 @@ export function MyRentals() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
-                      <Calendar className="h-5 w-5 text-primary" />
+                      <Calendar className="h-5 w-5 text-destructive" />
                       <span className="font-medium text-gray-900">Rental Period</span>
                     </div>
                     <div className="ml-7">
@@ -177,7 +177,7 @@ export function MyRentals() {
 
                   <div className="space-y-3">
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-5 w-5 text-primary" />
+                      <MapPin className="h-5 w-5 text-destructive" />
                       <span className="font-medium text-gray-900">Locations</span>
                     </div>
                     <div className="ml-7">
