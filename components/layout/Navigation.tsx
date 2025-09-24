@@ -34,7 +34,7 @@ export function Navigation() {
               <img
                 src="/upscalemedia-transformed (1)(1).png"
                 alt="Yayago Logo"
-                className="h-10 w-auto group-hover:scale-200 transition-transform"
+                className="h-20 w-auto group-hover:scale-110 transition-transform"
               />
               {/* <span className="text-2xl font-bold text-gradient">Yayago</span> -- Bu hissə silindi */}
             </Link>
