@@ -1,3 +1,4 @@
+// components/layout/Navigation.tsx
 'use client';
 
 import { useState } from 'react';
@@ -8,26 +9,27 @@ import {
   X,
   User // User ikonunu Dashboard ve Sign In linkleri için kullanıyoruz
 } from 'lucide-react';
+import { HeaderSearchBar } from './HeaderSearchBar'; // Yeni komponenti import edin
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <> {/* Birden fazla üst düzey element döndürmek için React Fragment kullanıyoruz */}
+    <>
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-center"> {/* relative, h-16, flex, items-center, justify-center eklendi */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between"> {/* justify-center justify-between olaraq dəyişdirildi */}
           {/* Hamburger menü butonu - en sola çekildi ve büyütüldü */}
           <Button
             variant="ghost"
-            size="lg" // Boyutu büyüttük
-            onClick={() => setIsOpen(true)} // Sadece menüyü açar
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-900" // Mutlak konumlandırma ile en sola çekildi
+            size="lg"
+            onClick={() => setIsOpen(true)}
+            className="text-gray-900 lg:hidden" // Böyük ekranlarda gizlət
           >
-            <Menu className="h-6 w-6" /> {/* İkon boyutunu büyüttük */}
+            <Menu className="h-6 w-6" />
           </Button>
 
-          {/* Logo - ortada kalır */}
-          <div className="absolute left-1/2 -translate-x-1/2">
+          {/* Logo - ortada qalır */}
+          <div className="absolute left-1/2 -translate-x-1/2"> {/* Mərkəzləşdirmə üçün mütləq yerləşdirməni saxlayın */}
             <Link href="/" className="flex items-center space-x-2 group">
               <img
                 src="/upscalemedia-transformed (1)(1).png"
@@ -37,10 +39,20 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* Sağ taraf (şimdilik boş, ancak başka elementler için kullanılabilir) */}
-          {/* <div className="absolute right-4 top-1/2 -translate-y-1/2">
-            // Örn: <Button>Giriş Yap</Button>
-          </div> */}
+          {/* Sağ tərəf: Header Search Bar və digər düymələr */}
+          <div className="flex items-center space-x-4">
+            <HeaderSearchBar /> {/* Yeni axtarış çubuğu komponenti */}
+            <Link href="/signin" className="hidden lg:block">
+              <Button variant="ghost" className="text-gray-900 hover:bg-gray-100">
+                Sign In
+              </Button>
+            </Link>
+            <Link href="/dashboard" className="hidden lg:block">
+              <Button className="gradient-primary text-white">
+                Dashboard
+              </Button>
+            </Link>
+          </div>
         </div>
       </nav>
 
@@ -60,8 +72,6 @@ export function Navigation() {
           >
             <X className="h-5 w-5" />
           </Button>
-          {/* İsteğe bağlı: Kenar çubuğuna küçük bir logo veya başlık ekleyebilirsiniz */}
-          {/* <span className="text-xl font-bold text-gradient">Yayago</span> */}
         </div>
 
         <div className="px-4 py-6 space-y-4">
@@ -134,7 +144,7 @@ export function Navigation() {
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ease-in-out"
-          onClick={() => setIsOpen(false)} // Dışarı tıklayınca menüyü kapatır
+          onClick={() => setIsOpen(false)}
         ></div>
       )}
     </>
