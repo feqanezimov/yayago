@@ -24,12 +24,12 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="bg-gray-900 py-8"> {/* Outer section for overall background and vertical spacing */}
-      <div className="hero-bg relative overflow-hidden rounded-3xl shadow-2xl max-w-7xl mx-auto min-h-[80vh] flex items-center"> {/* New container for image, rounded corners, shadow */}
+    <section className="bg-black py-8"> {/* Outer section for overall background and vertical spacing */}
+      <div className="hero-bg relative overflow-hidden rounded-3xl shadow-2xl w-full mx-auto min-h-[80vh] flex items-center"> {/* New container for image, rounded corners, shadow */}
         {/* Background Pattern */}
         <div className="absolute inset-0 pattern-dots opacity-30" />
 
-        <div className="max-w-7x1 mx-auto px-4 sm:px-6 lg:px-8 pb-20 w-full"> {/* Content container */}
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 w-full"> {/* Content container */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-white space-y-8 animate-fade-in">
