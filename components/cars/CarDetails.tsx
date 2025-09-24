@@ -136,7 +136,7 @@ export function CarDetails({ carId }: CarDetailsProps) {
     <section className="py-8 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
-        <Link href="/cars" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-6">
+        <Link href="/cars" className="inline-flex items-center text-destructive hover:text-destructive/80 transition-colors mb-6">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Cars
         </Link>
@@ -186,7 +186,7 @@ export function CarDetails({ carId }: CarDetailsProps) {
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
                   className={`flex-shrink-0 w-20 h-16 rounded-xl overflow-hidden border-2 transition-colors ${
-                    index === currentImageIndex ? 'border-primary' : 'border-gray-200'
+                    index === currentImageIndex ? 'border-destructive' : 'border-gray-200'
                   }`}
                 >
                   <img src={image} alt={`${car.name} ${index + 1}`} className="w-full h-full object-cover" />
@@ -209,12 +209,8 @@ export function CarDetails({ carId }: CarDetailsProps) {
                 />
                 <div className="flex-1">
                   <h4 className="font-bold text-gray-900 text-sm">{car.name}</h4>
-                  <p className="text-xs text-gray-600">{car.category}</p>
-                  <div className="flex items-center gap-2 mt-1">
-                    <Star className="h-3 w-3 text-yellow-400 fill-current" />
-                    <span className="text-xs font-medium">{car.rating}</span>
-                    <span className="text-xs text-gray-500">({car.reviews})</span>
-                  </div>
+                  <p className="text-sm text-gray-600">{car.category}</p>
+                  <p className="text-sm text-gray-500">Owner</p>
                 </div>
               </div>
 
@@ -386,7 +382,7 @@ export function CarDetails({ carId }: CarDetailsProps) {
               </div>
 
               {/* Pricing */}
-              <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-6">
+              <div className="bg-gradient-to-r from-destructive/10 to-destructive/5 rounded-2xl p-6">
                 <div className="flex items-center gap-4 mb-4">
                   {car.originalPrice > car.price && (
                     <span className="text-2xl text-gray-500 line-through">
@@ -503,19 +499,19 @@ export function CarDetails({ carId }: CarDetailsProps) {
                   <h3 className="font-bold text-gray-900 mb-4">Features & Amenities</h3>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="flex items-center gap-2">
-                      <Users className="h-4 w-4 text-primary" />
+                      <Users className="h-4 w-4 text-destructive" />
                       <span className="text-sm">{car.features.seats}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Settings className="h-4 w-4 text-primary" />
+                      <Settings className="h-4 w-4 text-destructive" />
                       <span className="text-sm">{car.features.transmission}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Fuel className="h-4 w-4 text-primary" />
+                      <Fuel className="h-4 w-4 text-destructive" />
                       <span className="text-sm">{car.features.fuel}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Car className="h-4 w-4 text-primary" />
+                      <Car className="h-4 w-4 text-destructive" />
                       <span className="text-sm">{car.features.doors}</span>
                     </div>
                     {car.features.ac && (
@@ -625,12 +621,12 @@ export function CarDetails({ carId }: CarDetailsProps) {
             </div>
 
             {/* Contact Support */}
-            <div className="bg-primary/10 rounded-3xl p-6">
+            <div className="bg-destructive/10 rounded-3xl p-6">
               <h3 className="font-bold text-gray-900 mb-2">Need Help?</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Our support team is available 24/7 to assist you
               </p>
-              <Button variant="outline" size="sm" className="w-full border-primary text-primary hover:bg-primary/5">
+              <Button variant="outline" size="sm" className="border-destructive text-destructive hover:bg-destructive/5">
                 Contact Support
               </Button>
             </div>
