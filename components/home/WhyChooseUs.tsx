@@ -14,7 +14,7 @@ const features = [
     icon: Shield,
     title: '0% Commission',
     description: 'Zero commission on both car rentals and garage services. Owners and service providers keep 100% of earnings',
-    color: 'text-blue-500'
+    color: 'text-red-500'
   },
   {
     icon: Clock,
@@ -26,7 +26,7 @@ const features = [
     icon: Truck,
     title: 'Complete Ecosystem',
     description: 'One platform for car rentals, maintenance, repairs, detailing, and all automotive needs',
-    color: 'text-purple-500'
+    color: 'text-red-500'
   },
   {
     icon: Award,
@@ -44,7 +44,7 @@ const features = [
     icon: CreditCard,
     title: 'Transparent Pricing',
     description: 'Clear pricing with no hidden fees. What you see is what you pay - guaranteed',
-    color: 'text-primary'
+    color: 'text-destructive'
   }
 ];
 
