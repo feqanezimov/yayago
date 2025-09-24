@@ -73,7 +73,7 @@ export function OurStory() {
                 alt="Dubai cityscape"
                 className="w-full h-80 object-cover rounded-3xl shadow-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent rounded-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-t from-red-300 to-transparent rounded-3xl" />
             </div>
           </div>
         </div>
@@ -92,10 +92,10 @@ export function OurStory() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="mb-6">
-                  <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <milestone.icon className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 bg-destructive/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <milestone.icon className="h-8 w-8 text-destructive" />
                   </div>
-                  <div className="text-2xl font-bold text-primary mb-2">
+                  <div className="text-2xl font-bold text-destructive mb-2">
                     {milestone.year}
                   </div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">
