@@ -23,7 +23,7 @@ export function HeaderSearchBar() {
   };
 
   return (
-    <div className="hidden lg:flex items-center bg-gray-800 rounded-full px-2 py-1 space-x-1 border border-white/20"> {/* glass-dark silindi, bg-gray-800 əlavə edildi */}
+    <div className="hidden lg:flex items-center bg-gray-700 rounded-full px-2 py-1 space-x-1 border border-white/20"> {/* glass-dark silindi, bg-gray-800 əlavə edildi */}
       {/* Models Select */}
       <Select value={selectedModel} onValueChange={setSelectedModel}>
         <SelectTrigger
@@ -32,7 +32,7 @@ export function HeaderSearchBar() {
         >
           <SelectValue placeholder="Models" />
         </SelectTrigger>
-        <SelectContent className="bg-gray-800 text-white border-gray-700">
+        <SelectContent className="bg-gray-700 text-white border-gray-700">
           <SelectItem value="all">All Models</SelectItem>
           <SelectItem value="economy">Economy</SelectItem>
           <SelectItem value="luxury">Luxury</SelectItem>
@@ -50,7 +50,7 @@ export function HeaderSearchBar() {
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-gray-700 text-white placeholder:text-gray-300" // bg-white/10 dəyişdirildi
+        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-transparent text-white placeholder:text-gray-300" // bg-white/10 dəyişdirildi
       />
 
       {/* Search Button */}
