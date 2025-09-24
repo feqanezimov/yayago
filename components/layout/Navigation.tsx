@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/button';
 import {
   Menu,
   X,
-  User // User ikonunu Dashboard ve Sign In linkleri için kullanıyoruz
+  User
 } from 'lucide-react';
-import { HeaderSearchBar } from './HeaderSearchBar'; // Yeni komponenti import edin
+import { HeaderSearchBar } from './HeaderSearchBar';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,54 +19,40 @@ export function Navigation() {
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
           {/* Left side: Hamburger menu and Logo */}
-          <div className="flex items-center space-x-20"> {/* Hamburger və loqo üçün sol tərəf */}
+          <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
               size="lg"
-              onClick={() => setIsOpen(true)}
-              className="text-gray-900" // lg:hidden sinifi silindi ki, həmişə görünsün
+              onClick={() => setIsOpen(!isOpen)} // Toggle isOpen
+              className="text-gray-900"
             >
-              <Menu className="h-8 w-8" />
+              <Menu className="h-6 w-6" />
             </Button>
 
-            {/* Logo - hamburger menyusunun yanında */}
+            {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group">
               <img
                 src="/upscalemedia-transformed (1)(1).png"
                 alt="Yayago Logo"
-                className="h-12 w-auto group-hover:scale-110 transition-transform"
+                className="h-10 w-auto group-hover:scale-110 transition-transform"
               />
-              {/* <span className="text-2xl font-bold text-gradient">Yayago</span> -- Bu hissə silindi */}
             </Link>
           </div>
 
           {/* Right side: Header Search Bar (desktop only) */}
           <div className="flex items-center space-x-4">
-            <HeaderSearchBar /> {/* Böyük ekranlarda görünür, kiçik ekranlarda gizli */}
-            {/* "Sign In" və "Dashboard" düymələri buradan silindi */}
+            <HeaderSearchBar />
           </div>
         </div>
       </nav>
 
-      {/* Kenar Çubuğu Menüsü */}
+      {/* Dropdown Menu - Hamburger menyusunun altından açılır */}
       <div
-        className={`fixed top-0 left-0 h-screen w-80 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed top-16 left-4 mt-2 w-64 glass rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top ${
+          isOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'
         }`}
       >
-        <div className="p-4 flex justify-between items-center border-b border-gray-200">
-          {/* Kapatma butonu */}
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setIsOpen(false)}
-            className="text-gray-900"
-          >
-            <X className="h-5 w-5" />
-          </Button>
-        </div>
-
-        <div className="px-4 py-6 space-y-4">
+        <div className="p-4 space-y-2">
           {/* Navigasyon Linkleri */}
           <Link
             href="/cars"
@@ -110,7 +96,7 @@ export function Navigation() {
           >
             Contact
           </Link>
-          <div className="pt-4 space-y-3">
+          <div className="pt-4 space-y-3 border-t border-gray-200">
             {/* Sign In and Dashboard moved here */}
             <Link href="/signin" onClick={() => setIsOpen(false)}>
               <Button variant="ghost" className="w-full bg-transparent text-gray-900 hover:bg-gray-100 justify-start">
@@ -133,10 +119,10 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Arka Plan Karartma Katmanı */}
+      {/* Arxa Plan Karartma Katmanı */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ease-in-out"
+          className="fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 ease-in-out"
           onClick={() => setIsOpen(false)}
         ></div>
       )}
