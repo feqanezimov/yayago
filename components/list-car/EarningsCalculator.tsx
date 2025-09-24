@@ -71,7 +71,7 @@ export function EarningsCalculator() {
                     </SelectContent>
                   </Select>
                   <p className="text-sm text-gray-500 mt-2">
-                    Average rate: AED 0/day
+                    Average rate: AED {carTypeRates[carType as keyof typeof carTypeRates]?.avg || 0}/day
                   </p>
                 </div>
 
@@ -147,3 +147,58 @@ export function EarningsCalculator() {
                     </div>
                     <div className="bg-white rounded-xl p-4">
                       <div className="text-xl font-bold text-green-600">
+                        100%
+                      </div>
+                      <div className="text-sm text-gray-500">You keep</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Comparison with other platforms */}
+            <div className="bg-gray-50 rounded-3xl p-8">
+              <div className="text-center">
+                <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                  Other Platforms (20% Commission)
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <div className="text-4xl font-bold text-gray-900 mb-2">
+                      AED {comparisonEarnings.toLocaleString()}
+                    </div>
+                    <div className="text-gray-600">Monthly earnings</div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white rounded-xl p-4">
+                      <div className="text-xl font-bold text-gray-900">
+                        AED {(comparisonEarnings * 12).toLocaleString()}
+                      </div>
+                      <div className="text-sm text-gray-500">Yearly</div>
+                    </div>
+                    <div className="bg-white rounded-xl p-4">
+                      <div className="text-xl font-bold text-red-600">
+                        80%
+                      </div>
+                      <div className="text-sm text-gray-500">You keep</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Savings */}
+            <div className="bg-green-50 rounded-3xl p-8 text-center">
+              <h3 className="text-2xl font-bold text-green-800 mb-2">
+                Save AED {(monthlyEarnings - comparisonEarnings).toLocaleString()} Monthly!
+              </h3>
+              <p className="text-green-700">
+                By choosing Yayago, you keep an extra AED {(monthlyEarnings - comparisonEarnings).toLocaleString()} every month!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
