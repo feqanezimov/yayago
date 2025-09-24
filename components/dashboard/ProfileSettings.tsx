@@ -82,7 +82,7 @@ export function ProfileSettings() {
       <div className="bg-white rounded-2xl p-6 shadow-lg">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">Profile Picture</h3>
         <div className="flex items-center gap-6">
-          <div className="w-24 h-24 bg-gradient-to-r from-primary to-purple-600 rounded-full flex items-center justify-center">
+          <div className="w-24 h-24 bg-gradient-to-r from-destructive to-red-600 rounded-full flex items-center justify-center">
             <User className="h-12 w-12 text-white" />
           </div>
           <div className="space-y-2">
@@ -264,7 +264,7 @@ export function ProfileSettings() {
           {paymentMethods.map((method) => (
             <div key={method.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-8 bg-gradient-to-r from-primary to-purple-600 rounded flex items-center justify-center">
+                <div className="w-12 h-8 bg-gradient-to-r from-destructive to-red-600 rounded flex items-center justify-center">
                   <CreditCard className="h-4 w-4 text-white" />
                 </div>
                 <div>
@@ -272,7 +272,7 @@ export function ProfileSettings() {
                     {method.brand} ending in {method.last4}
                   </div>
                   {method.isDefault && (
-                    <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">Default</span>
+                    <span className="text-xs bg-destructive/20 text-destructive px-2 py-1 rounded-full">Default</span>
                   )}
                 </div>
               </div>
@@ -328,7 +328,7 @@ export function ProfileSettings() {
                   checked={notification.enabled}
                   onChange={() => {/* Handle toggle */}}
                 />
-                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-destructive/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-destructive"></div>
               </label>
             </div>
           ))}
@@ -362,7 +362,7 @@ export function ProfileSettings() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-6 py-4 font-medium whitespace-nowrap transition-colors ${
                   activeTab === tab.id
-                    ? 'text-primary border-b-2 border-primary'
+                    ? 'text-destructive border-b-2 border-destructive'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
