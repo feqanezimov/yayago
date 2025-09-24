@@ -21,7 +21,7 @@ export function ContactHero() {
       icon: Mail,
       title: 'Email Support',
       details: ['support@yayago.ae', 'hello@yayago.ae'],
-      color: 'text-blue-500'
+      color: 'text-red-500'
     },
     {
       icon: MapPin,
@@ -33,12 +33,12 @@ export function ContactHero() {
       icon: Clock,
       title: 'Response Time',
       details: ['< 2 hours average', '24/7 emergency support'],
-      color: 'text-purple-500'
+      color: 'text-red-500'
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-destructive/10 to-destructive/5 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 pattern-dots opacity-30" />
       
@@ -57,12 +57,12 @@ export function ContactHero() {
           {/* Multi-language Support Badge */}
           <div className="mt-8">
             <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-lg border border-white/20 rounded-full px-6 py-3">
-              <Globe className="h-5 w-5 text-primary" />
+              <Globe className="h-5 w-5 text-destructive" />
               <span className="font-semibold text-gray-900">Support in 3 Languages</span>
               <div className="flex space-x-2">
-                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">English</span>
-                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">العربية</span>
-                <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Русский</span>
+                <span className="text-xs bg-destructive/20 text-destructive px-2 py-1 rounded">English</span>
+                <span className="text-xs bg-destructive/20 text-destructive px-2 py-1 rounded">العربية</span>
+                <span className="text-xs bg-destructive/20 text-destructive px-2 py-1 rounded">Русский</span>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ export function ContactHero() {
           {contactInfo.map((info, index) => (
             <div
               key={info.title}
-              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover-scale animate-slide-up text-center"
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover-scale animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="space-y-4">
