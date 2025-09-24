@@ -139,7 +139,7 @@ export function GarageGrid({ filters }: GarageGridProps) {
 
   const getTypeBadge = (type: string) => {
     return type === 'garage' ? 
-      <Badge variant="outline" className="border-blue-500 text-blue-600">Service Center</Badge> :
+      <Badge variant="outline" className="border-red-500 text-red-600">Service Center</Badge> :
       <Badge variant="outline" className="border-green-500 text-green-600">Mobile Master</Badge>;
   };
 
@@ -278,7 +278,7 @@ export function GarageGrid({ filters }: GarageGridProps) {
                   <Clock className="h-4 w-4" />
                   <span>{garage.availability}</span>
                 </div>
-                <div className="text-primary font-semibold">{garage.priceRange}</div>
+                <div className="text-destructive font-semibold">{garage.priceRange}</div>
               </div>
 
               {/* Action Buttons */}
@@ -314,7 +314,7 @@ export function GarageGrid({ filters }: GarageGridProps) {
         </div>
       ) : (
         <div className="text-center pt-8">
-          <Button size="lg" variant="outline" className="border-primary/20 text-primary hover:bg-primary/5">
+          <Button size="lg" variant="outline" className="border-destructive/20 text-destructive hover:bg-destructive/5">
             Load More Service Providers
           </Button>
         </div>
