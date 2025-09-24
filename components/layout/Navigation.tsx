@@ -26,7 +26,7 @@ export function Navigation() {
               onClick={() => setIsOpen(true)}
               className="text-gray-900" // lg:hidden sinifi silindi ki, həmişə görünsün
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-12 w-12" />
             </Button>
 
             {/* Logo - hamburger menyusunun yanında */}
