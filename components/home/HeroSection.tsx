@@ -29,7 +29,7 @@ export function HeroSection() {
         {/* Background Pattern */}
         <div className="absolute inset-0 pattern-dots opacity-30" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 w-full"> {/* Content container */}
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 pb-20 w-full"> {/* Content container */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-white space-y-8 animate-fade-in">
