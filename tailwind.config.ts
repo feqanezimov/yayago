@@ -60,6 +60,15 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        // Custom colors for the new scheme
+        gold: {
+          100: 'hsl(45 100% 90%)', // Light gold for backgrounds
+          600: 'hsl(45 100% 50%)', // Main gold for text/icons
+        },
+        brown: { // Changed to a neutral gray as per request
+          100: 'hsl(0 0% 90%)',
+          600: 'hsl(0 0% 40%)',
+        }
       },
       keyframes: {
         'accordion-down': {
@@ -88,3 +97,4 @@ const config: Config = {
   plugins: [require('tailwindcss-animate')],
 };
 export default config;
+
