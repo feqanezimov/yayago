@@ -30,7 +30,7 @@ export function Navigation() {
 
             {/* Dropdown Menu - now absolute within this relative div */}
             <div
-              className={`absolute top-full left-0 mt-2 w-64 glass rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top ${
+              className={`absolute top-full left-0 mt-2 w-64 glass rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top text-white ${
                 isOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'
               }`}
             >
