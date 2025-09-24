@@ -21,8 +21,8 @@ const values = [
     icon: Shield,
     title: 'Trust & Safety',
     description: 'Every user is verified and every transaction is secure. Safety is never compromised.',
-    color: 'text-blue-500',
-    bgColor: 'bg-blue-50'
+    color: 'text-red-500',
+    bgColor: 'bg-red-50'
   },
   {
     icon: Users,
@@ -42,15 +42,15 @@ const values = [
     icon: Globe,
     title: 'Transparency',
     description: 'Clear pricing, honest communication, and no hidden fees. What you see is what you get.',
-    color: 'text-purple-500',
-    bgColor: 'bg-purple-50'
+    color: 'text-red-500',
+    bgColor: 'bg-red-50'
   },
   {
     icon: DollarSign,
     title: 'Fair Economics',
     description: 'Our 0% commission model ensures car owners keep 100% of their rental earnings.',
-    color: 'text-primary',
-    bgColor: 'bg-primary/10'
+    color: 'text-destructive',
+    bgColor: 'bg-destructive/10'
   }
 ];
 
