@@ -17,19 +17,23 @@ export function Navigation() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between"> {/* justify-center justify-between olaraq dəyişdirildi */}
-          {/* Hamburger menü butonu - en sola çekildi ve büyütüldü */}
-          <Button
-            variant="ghost"
-            size="lg"
-            onClick={() => setIsOpen(true)}
-            className="text-gray-900 lg:hidden" // Böyük ekranlarda gizlət
-          >
-            <Menu className="h-6 w-6" />
-          </Button>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
+          {/* Left side: Hamburger menu for small screens, empty div for large screens */}
+          <div className="flex items-center"> {/* Bu div sol tərəfə hizalanmış elementləri ehtiva edəcək */}
+            <Button
+              variant="ghost"
+              size="lg"
+              onClick={() => setIsOpen(true)}
+              className="text-gray-900 lg:hidden" // Kiçik ekranlarda görünür, böyük ekranlarda gizli
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
+            {/* Böyük ekranlar üçün yer tutucu. Hamburger gizlədildikdə sağ tərəfi balanslaşdırmaq üçün */}
+            <div className="hidden lg:block w-0"></div> {/* Bu, böyük ekranlarda bir flex elementi kimi çıxış edir */}
+          </div>
 
-          {/* Logo - ortada qalır */}
-          <div className="absolute left-1/2 -translate-x-1/2"> {/* Mərkəzləşdirmə üçün mütləq yerləşdirməni saxlayın */}
+          {/* Logo - mütləq yerləşdirmə ilə həmişə mərkəzdə */}
+          <div className="absolute left-1/2 -translate-x-1/2">
             <Link href="/" className="flex items-center space-x-2 group">
               <img
                 src="/upscalemedia-transformed (1)(1).png"
@@ -39,9 +43,9 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* Sağ tərəf: Header Search Bar və digər düymələr */}
+          {/* Right side: Header Search Bar və digər düymələr */}
           <div className="flex items-center space-x-4">
-            <HeaderSearchBar /> {/* Yeni axtarış çubuğu komponenti */}
+            <HeaderSearchBar /> {/* Böyük ekranlarda görünür, kiçik ekranlarda gizli */}
             <Link href="/signin" className="hidden lg:block">
               <Button variant="ghost" className="text-gray-900 hover:bg-gray-100">
                 Sign In
