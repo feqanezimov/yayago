@@ -82,7 +82,7 @@ export function GarageDetails({ garageId }: GarageDetailsProps) {
     <section className="py-8 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
-        <Link href="/garages" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-6">
+        <Link href="/garages" className="inline-flex items-center text-destructive hover:text-destructive/80 transition-colors mb-6">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Services
         </Link>
@@ -131,7 +131,7 @@ export function GarageDetails({ garageId }: GarageDetailsProps) {
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
                     className={`flex-shrink-0 w-20 h-16 rounded-xl overflow-hidden border-2 transition-colors ${
-                      index === currentImageIndex ? 'border-primary' : 'border-gray-200'
+                      index === currentImageIndex ? 'border-destructive' : 'border-gray-200'
                     }`}
                   >
                     <img src={image} alt={`${garage.name} ${index + 1}`} className="w-full h-full object-cover" />
@@ -166,11 +166,11 @@ export function GarageDetails({ garageId }: GarageDetailsProps) {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-primary" />
+                  <Clock className="h-4 w-4 text-destructive" />
                   <span className="text-sm font-medium">{garage.availability.hours}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-primary" />
+                  <MapPin className="h-4 w-4 text-destructive" />
                   <span className="text-sm">{garage.location}</span>
                 </div>
                 {garage.verified && (
@@ -196,7 +196,7 @@ export function GarageDetails({ garageId }: GarageDetailsProps) {
                   </Badge>
                 ))}
                 <Badge className={`border-0 ${
-                  garage.type === 'garage' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
+                  garage.type === 'garage' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'
                 }`}>
                   {garage.type === 'garage' ? 'Service Center' : 'Mobile Master'}
                 </Badge>
@@ -228,7 +228,7 @@ export function GarageDetails({ garageId }: GarageDetailsProps) {
                     <p className="text-gray-600 text-sm mb-3">{service.description}</p>
                     <div className="flex items-center justify-between">
                       <div>
-                        <div className="font-bold text-primary text-lg">AED {service.price}</div>
+                        <div className="font-bold text-destructive text-lg">AED {service.price}</div>
                         <div className="text-sm text-gray-500">{service.duration}</div>
                       </div>
                       <Button 
