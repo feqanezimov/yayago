@@ -21,9 +21,10 @@ export function Navigation() {
           {/* Left: Hamburger menu and its dropdown */}
           <div className="relative flex items-center"> {/* Added relative here */}
             <Button
+              variant="ghost"
               size="lg"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-900"
+              className="text-white"
             >
               <Menu className="h-6 w-6" />
             </Button>
