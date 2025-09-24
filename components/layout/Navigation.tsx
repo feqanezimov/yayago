@@ -38,42 +38,42 @@ export function Navigation() {
                 {/* Navigasyon Linkleri */}
                 <Link
                   href="/cars"
-                  className="block text-gray-900 hover:text-primary transition-colors font-medium"
+                  className="block hover:text-primary transition-colors font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   Find Cars
                 </Link>
                 <Link
                   href="/garages"
-                  className="block text-gray-900 hover:text-primary transition-colors font-medium"
+                  className="block hover:text-primary transition-colors font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   Auto Services
                 </Link>
                 <Link
                   href="/list-car"
-                  className="block text-gray-900 hover:text-primary transition-colors font-medium"
+                  className="block hover:text-primary transition-colors font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   List Your Car
                 </Link>
                 <Link
                   href="/how-it-works"
-                  className="block text-gray-900 hover:text-primary transition-colors font-medium"
+                  className="block hover:text-primary transition-colors font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   How It Works
                 </Link>
                 <Link
                   href="/about"
-                  className="block text-gray-900 hover:text-primary transition-colors font-medium"
+                  className="block hover:text-primary transition-colors font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   About Us
                 </Link>
                 <Link
                   href="/contact"
-                  className="block text-gray-900 hover:text-primary transition-colors font-medium"
+                  className="block hover:text-primary transition-colors font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   Contact
