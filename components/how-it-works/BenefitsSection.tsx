@@ -23,16 +23,16 @@ const benefits = [
     title: 'Secure & Verified',
     description: 'All users verified with UAE documents',
     detail: 'Driver licenses, Emirates ID, and insurance checked',
-    color: 'text-blue-500',
-    bgColor: 'bg-blue-50'
+    color: 'text-red-500',
+    bgColor: 'bg-red-50'
   },
   {
     icon: Clock,
     title: '24/7 Support',
     description: 'Round-the-clock customer assistance',
     detail: 'Multilingual support in English, Arabic & Russian',
-    color: 'text-purple-500',
-    bgColor: 'bg-purple-50'
+    color: 'text-red-500',
+    bgColor: 'bg-red-50'
   },
   {
     icon: Globe,
@@ -55,8 +55,8 @@ const benefits = [
     title: 'Instant Booking',
     description: 'Book available cars immediately',
     detail: 'Real-time availability and instant confirmations',
-    color: 'text-primary',
-    bgColor: 'bg-primary/10'
+    color: 'text-destructive',
+    bgColor: 'bg-destructive/10'
   }
 ];
 
