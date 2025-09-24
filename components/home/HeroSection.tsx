@@ -2,19 +2,25 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link'; // Link importu əlavə edildi
 import { Button } from '@/components/ui/button';
 import { SearchForm } from '@/components/booking/SearchForm';
+import { HeaderSearchBar } from '../layout/HeaderSearchBar'; // HeaderSearchBar importu əlavə edildi
 import {
   Star,
   Users,
   Car,
   Clock,
   ChevronDown,
-  ArrowRight
+  ArrowRight,
+  Menu, // Menu iconu əlavə edildi
+  X, // X iconu əlavə edildi
+  User // User iconu əlavə edildi
 } from 'lucide-react';
 
 export function HeroSection() {
   const [showSearch, setShowSearch] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // isOpen state-i əlavə edildi
 
   const stats = [
     { icon: Car, value: '500+', label: 'Premium Cars' },
@@ -26,10 +32,116 @@ export function HeroSection() {
   return (
     <section className="bg-black py-8"> {/* Outer section for overall background and vertical spacing */}
       <div className="hero-bg relative overflow-hidden rounded-3xl shadow-2xl w-full mx-auto min-h-[80vh] flex items-center"> {/* New container for image, rounded corners, shadow */}
+        {/* Integrated Navigation Bar */}
+        <nav className="absolute top-0 left-0 right-0 z-50 glass border-b border-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
+            {/* Left: Hamburger menu and its dropdown */}
+            <div className="relative flex items-center">
+              <Button
+                variant="ghost"
+                size="lg"
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-white hover:text-white hover:bg-transparent"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-64 glass rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top text-white ${
+                  isOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'
+                }`}
+              >
+                <div className="p-4 space-y-2">
+                  {/* Navigasyon Linkleri */}
+                  <Link
+                    href="/cars"
+                    className="block hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Find Cars
+                  </Link>
+                  <Link
+                    href="/garages"
+                    className="block hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Auto Services
+                  </Link>
+                  <Link
+                    href="/list-car"
+                    className="block hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    List Your Car
+                  </Link>
+                  <Link
+                    href="/how-it-works"
+                    className="block hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    How It Works
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="block hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="block hover:text-primary transition-colors font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                  <div className="pt-4 space-y-3 border-t border-gray-200">
+                    {/* Sign In and Dashboard moved here */}
+                    <Link href="/signin" onClick={() => setIsOpen(false)}>
+                      <Button variant="ghost" className="w-full bg-transparent text-gray-900 hover:bg-gray-100 justify-start">
+                        <User className="h-4 w-4 mr-2" />
+                        Sign In
+                      </Button>
+                    </Link>
+                    <Link href="/signup" onClick={() => setIsOpen(false)}>
+                      <Button className="w-full gradient-primary text-white justify-start">
+                        Get Started
+                      </Button>
+                    </Link>
+                    <Link href="/dashboard" onClick={() => setIsOpen(false)}>
+                      <Button variant="ghost" className="w-full bg-transparent text-gray-900 hover:bg-gray-100 justify-start">
+                        <User className="h-4 w-4 mr-2" />
+                        Dashboard
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Center: Logo */}
+            <div className="flex-1 flex justify-center">
+              <Link href="/" className="flex items-center space-x-2 group">
+                <img
+                  src="/upscalemedia-transformed (1)(1).png"
+                  alt="Yayago Logo"
+                  className="h-10 w-auto group-hover:scale-110 transition-transform"
+                />
+              </Link>
+            </div>
+
+            {/* Right: Search Bar */}
+            <div className="flex items-center">
+              <HeaderSearchBar />
+            </div>
+          </div>
+        </nav>
+
         {/* Background Pattern */}
         <div className="absolute inset-0 pattern-dots opacity-30" />
 
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 w-full"> {/* Content container */}
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 w-full"> {/* Content container, pt-16 əlavə edildi */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-white space-y-8 animate-fade-in">
@@ -129,6 +241,14 @@ export function HeroSection() {
           </div>
         )}
       </div>
+
+      {/* Arxa Plan Karartma Katmanı */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ease-in-out"
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
     </section>
   );
 }
