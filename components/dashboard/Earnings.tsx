@@ -128,10 +128,10 @@ export function Earnings() {
 
         <div className="bg-white rounded-2xl p-6 shadow-lg">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-blue-100 rounded-xl">
-              <TrendingUp className="h-6 w-6 text-blue-600" />
+            <div className="p-3 bg-red-100 rounded-xl">
+              <TrendingUp className="h-6 w-6 text-red-600" />
             </div>
-            <div className="text-sm text-blue-600 font-medium">This Month</div>
+            <div className="text-sm text-red-600 font-medium">This Month</div>
           </div>
           <div className="text-3xl font-bold text-gray-900 mb-1">
             AED {earningsData.current.thisMonth.toLocaleString()}
@@ -154,8 +154,8 @@ export function Earnings() {
 
         <div className="bg-white rounded-2xl p-6 shadow-lg">
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-purple-100 rounded-xl">
-              <CreditCard className="h-6 w-6 text-purple-600" />
+            <div className="p-3 bg-red-100 rounded-xl">
+              <CreditCard className="h-6 w-6 text-red-600" />
             </div>
             <div className="text-sm text-green-600 font-medium">Available</div>
           </div>
@@ -171,7 +171,7 @@ export function Earnings() {
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-xl font-bold text-gray-900">Monthly Earnings Trend</h2>
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <div className="w-3 h-3 bg-primary rounded-full"></div>
+            <div className="w-3 h-3 bg-destructive rounded-full"></div>
             Earnings (AED)
           </div>
         </div>
@@ -185,7 +185,7 @@ export function Earnings() {
                   AED {data.earnings.toLocaleString()}
                 </div>
                 <div
-                  className="w-full bg-gradient-to-t from-primary to-purple-600 rounded-t-lg transition-all hover:opacity-80"
+                  className="w-full bg-gradient-to-t from-destructive to-red-600 rounded-t-lg transition-all hover:opacity-80"
                   style={{ height: `${height}px` }}
                 ></div>
                 <div className="text-sm text-gray-500 mt-2">{data.month}</div>
@@ -203,7 +203,7 @@ export function Earnings() {
           {earningsData.breakdown.map((car, index) => (
             <div key={index} className="flex items-center justify-between p-6 bg-gray-50 rounded-2xl">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary to-purple-600 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-destructive to-red-600 rounded-full flex items-center justify-center">
                   <Car className="h-6 w-6 text-white" />
                 </div>
                 <div>
@@ -238,8 +238,8 @@ export function Earnings() {
           {earningsData.transactions.map((transaction) => (
             <div key={transaction.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center">
-                  <Car className="h-5 w-5 text-primary" />
+                <div className="w-10 h-10 bg-destructive/20 rounded-xl flex items-center justify-center">
+                  <Car className="h-5 w-5 text-destructive" />
                 </div>
                 <div>
                   <div className="font-medium text-gray-900">{transaction.car}</div>
@@ -267,7 +267,7 @@ export function Earnings() {
       </div>
 
       {/* Withdrawal Section */}
-      <div className="bg-gradient-to-r from-primary/10 to-purple-600/10 rounded-3xl p-8">
+      <div className="bg-gradient-to-r from-destructive/10 to-red-600/10 rounded-3xl p-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Ready to Withdraw?</h3>
