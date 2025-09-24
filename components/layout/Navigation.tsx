@@ -18,8 +18,8 @@ export function Navigation() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
-          {/* Left side: Hamburger menu for small screens, empty div for large screens */}
-          <div className="flex items-center"> {/* Bu div sol tərəfə hizalanmış elementləri ehtiva edəcək */}
+          {/* Left side: Hamburger menu for small screens and Logo */}
+          <div className="flex items-center space-x-4"> {/* Added space-x-4 for spacing between hamburger and logo */}
             <Button
               variant="ghost"
               size="lg"
@@ -28,12 +28,9 @@ export function Navigation() {
             >
               <Menu className="h-6 w-6" />
             </Button>
-            {/* Böyük ekranlar üçün yer tutucu. Hamburger gizlədildikdə sağ tərəfi balanslaşdırmaq üçün */}
-            <div className="hidden lg:block w-0"></div> {/* Bu, böyük ekranlarda bir flex elementi kimi çıxış edir */}
-          </div>
 
-          {/* Logo - mütləq yerləşdirmə ilə həmişə mərkəzdə */}
-          <div className="absolute left-1/2 -translate-x-1/2">
+            {/* Logo - now part of the flex flow, on the left */}
+            {/* Removed absolute positioning to prevent overlap and align left as per image */}
             <Link href="/" className="flex items-center space-x-2 group">
               <img
                 src="/upscalemedia-transformed (1)(1).png"
@@ -43,19 +40,11 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* Right side: Header Search Bar və digər düymələr */}
+          {/* Right side: Header Search Bar (desktop only) */}
+          {/* Sign In and Dashboard buttons are removed from here as per user request */}
           <div className="flex items-center space-x-4">
             <HeaderSearchBar /> {/* Böyük ekranlarda görünür, kiçik ekranlarda gizli */}
-            <Link href="/signin" className="hidden lg:block">
-              <Button variant="ghost" className="text-gray-900 hover:bg-gray-100">
-                Sign In
-              </Button>
-            </Link>
-            <Link href="/dashboard" className="hidden lg:block">
-              <Button className="gradient-primary text-white">
-                Dashboard
-              </Button>
-            </Link>
+            {/* Sign In and Dashboard buttons are moved to the sidebar */}
           </div>
         </div>
       </nav>
@@ -123,6 +112,7 @@ export function Navigation() {
             Contact
           </Link>
           <div className="pt-4 space-y-3">
+            {/* Sign In and Dashboard moved here */}
             <Link href="/signin" onClick={() => setIsOpen(false)}>
               <Button variant="ghost" className="w-full bg-transparent text-gray-900 hover:bg-gray-100 justify-start">
                 <User className="h-4 w-4 mr-2" />
