@@ -51,7 +51,7 @@ export function EarningsCalculator() {
           <div className="space-y-8">
             <div className="bg-gray-50 rounded-3xl p-8">
               <div className="flex items-center gap-3 mb-6">
-                <Calculator className="h-6 w-6 text-primary" />
+                <Calculator className="h-6 w-6 text-destructive" />
                 <h3 className="text-xl font-bold text-gray-900">Earnings Calculator</h3>
               </div>
 
@@ -126,14 +126,14 @@ export function EarningsCalculator() {
           {/* Results */}
           <div className="space-y-6">
             {/* Yayago Earnings */}
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8">
+            <div className="bg-gradient-to-br from-destructive/10 to-destructive/5 rounded-3xl p-8">
               <div className="text-center">
-                <div className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
+                <div className="inline-flex items-center gap-2 bg-destructive text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
                   With Yayago (0% Commission)
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <div className="text-4xl font-bold text-primary mb-2">
+                    <div className="text-4xl font-bold text-destructive mb-2">
                       AED {monthlyEarnings.toLocaleString()}
                     </div>
                     <div className="text-gray-600">Monthly earnings</div>
@@ -146,51 +146,4 @@ export function EarningsCalculator() {
                       <div className="text-sm text-gray-500">Yearly</div>
                     </div>
                     <div className="bg-white rounded-xl p-4">
-                      <div className="text-xl font-bold text-green-600">100%</div>
-                      <div className="text-sm text-gray-500">You keep</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Comparison */}
-            <div className="bg-red-50 rounded-3xl p-8 border border-red-200">
-              <div className="text-center">
-                <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-                  Other Platforms (20% Commission)
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <div className="text-4xl font-bold text-red-600 mb-2">
-                      AED {comparisonEarnings.toLocaleString()}
-                    </div>
-                    <div className="text-gray-600">Monthly earnings</div>
-                  </div>
-                  <div className="bg-white rounded-xl p-4">
-                    <div className="text-xl font-bold text-red-600 mb-1">
-                      AED {(monthlyEarnings - comparisonEarnings).toLocaleString()}
-                    </div>
-                    <div className="text-sm text-gray-500">Less per month</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Savings Highlight */}
-            <div className="bg-green-50 rounded-2xl p-6 border border-green-200">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-700 mb-2">
-                  You Save AED {((monthlyEarnings - comparisonEarnings) * 12).toLocaleString()}/year
-                </div>
-                <div className="text-green-600">
-                  By choosing Yayago's 0% commission model
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+                      <div className="text-xl font-bold text-green-600">
