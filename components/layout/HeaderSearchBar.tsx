@@ -23,11 +23,11 @@ export function HeaderSearchBar() {
   };
 
   return (
-    <div className="hidden lg:flex items-center glass-dark rounded-full px-2 py-1 space-x-1 border border-white/20">
+    <div className="hidden lg:flex items-center bg-gray-800 rounded-full px-2 py-1 space-x-1 border border-white/20"> {/* glass-dark silindi, bg-gray-800 əlavə edildi */}
       {/* Models Select */}
       <Select value={selectedModel} onValueChange={setSelectedModel}>
         <SelectTrigger
-          className="w-[120px] border-none shadow-none focus:ring-0 bg-transparent text-white data-[state=open]:bg-white/20"
+          className="w-[120px] border-none shadow-none focus:ring-0 bg-transparent text-white data-[state=open]:bg-gray-700" // data-[state=open]:bg-white/20 dəyişdirildi
           aria-label="Select car model"
         >
           <SelectValue placeholder="Models" />
@@ -50,7 +50,7 @@ export function HeaderSearchBar() {
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-transparent text-white placeholder:text-gray-300"
+        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-gray-700 text-white placeholder:text-gray-300" // bg-white/10 dəyişdirildi
       />
 
       {/* Search Button */}
@@ -58,7 +58,7 @@ export function HeaderSearchBar() {
         variant="ghost"
         size="sm"
         onClick={handleSearch}
-        className="bg-white/20 hover:bg-white/30 text-white rounded-full p-2"
+        className="bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2" // bg-white/20 hover:bg-white/30 dəyişdirildi
       >
         <Search className="h-4 w-4" />
       </Button>
