@@ -24,7 +24,7 @@ export function Navigation() {
               variant="ghost"
               size="lg"
               onClick={() => setIsOpen(true)}
-              className="text-gray-900 lg:hidden" // Kiçik ekranlarda görünür, böyük ekranlarda gizli
+              className="text-gray-900" // lg:hidden sinifi silindi ki, həmişə görünsün
             >
               <Menu className="h-6 w-6" />
             </Button>
@@ -36,6 +36,7 @@ export function Navigation() {
                 alt="Yayago Logo"
                 className="h-10 w-auto group-hover:scale-110 transition-transform"
               />
+              <span className="text-2xl font-bold text-gradient">Yayago</span> {/* Yayago mətni əlavə edildi */}
             </Link>
           </div>
 
