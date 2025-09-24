@@ -38,7 +38,7 @@ export function SearchForm({ onClose }: SearchFormProps) {
       <div className="grid md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="pickup" className="text-white flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-primary" />
+            <MapPin className="h-4 w-4 text-destructive" />
             Pickup Location
           </Label>
           <Input
@@ -53,7 +53,7 @@ export function SearchForm({ onClose }: SearchFormProps) {
         </div>
         <div className="space-y-2">
           <Label htmlFor="dropoff" className="text-white flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-primary" />
+            <MapPin className="h-4 w-4 text-destructive" />
             Drop-off Location
           </Label>
           <Input
@@ -72,7 +72,7 @@ export function SearchForm({ onClose }: SearchFormProps) {
         <div className="grid grid-cols-2 gap-2">
           <div className="space-y-2">
             <Label htmlFor="pickupDate" className="text-white flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-primary" />
+              <Calendar className="h-4 w-4 text-destructive" />
               Pickup Date
             </Label>
             <Input
@@ -86,7 +86,7 @@ export function SearchForm({ onClose }: SearchFormProps) {
           </div>
           <div className="space-y-2">
             <Label htmlFor="pickupTime" className="text-white flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" />
+              <Clock className="h-4 w-4 text-destructive" />
               Time
             </Label>
             <Input
@@ -101,7 +101,7 @@ export function SearchForm({ onClose }: SearchFormProps) {
         <div className="grid grid-cols-2 gap-2">
           <div className="space-y-2">
             <Label htmlFor="dropoffDate" className="text-white flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-primary" />
+              <Calendar className="h-4 w-4 text-destructive" />
               Drop-off Date
             </Label>
             <Input
@@ -115,7 +115,7 @@ export function SearchForm({ onClose }: SearchFormProps) {
           </div>
           <div className="space-y-2">
             <Label htmlFor="dropoffTime" className="text-white flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" />
+              <Clock className="h-4 w-4 text-destructive" />
               Time
             </Label>
             <Input
