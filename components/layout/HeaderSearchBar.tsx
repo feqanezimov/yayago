@@ -27,7 +27,7 @@ export function HeaderSearchBar() {
       {/* Models Select */}
       <Select value={selectedModel} onValueChange={setSelectedModel}>
         <SelectTrigger
-          className="w-[120px] border-none shadow-none focus:ring-0 bg-gray-700 text-white" // bg-transparent dəyişdirildi
+          className="w-[120px] border-none shadow-none focus:ring-0 bg-gray-700 text-white"
           aria-label="Select car model"
         >
           <SelectValue placeholder="Models" />
@@ -50,7 +50,7 @@ export function HeaderSearchBar() {
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-white text-gray-900 placeholder:text-gray-500" // bg-transparent, text-white, placeholder:text-gray-300 dəyişdirildi
+        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-gray-700 text-white placeholder:text-gray-400" // Dəyişikliklər burada edildi
       />
 
       {/* Search Button */}
@@ -58,7 +58,7 @@ export function HeaderSearchBar() {
         variant="ghost"
         size="sm"
         onClick={handleSearch}
-        className="bg-gray-600 hover:bg-gray-500 text-white rounded-full p-2" // bg-gray-700 və hover:bg-gray-600 dəyişdirildi
+        className="bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2" // Dəyişikliklər burada edildi
       >
         <Search className="h-4 w-4" />
       </Button>
