@@ -23,16 +23,16 @@ export function HeaderSearchBar() {
   };
 
   return (
-    <div className="hidden lg:flex items-center bg-gray-700 rounded-full px-2 py-1 space-x-1 border border-white/20"> {/* glass-dark silindi, bg-gray-800 əlavə edildi */}
+    <div className="hidden lg:flex items-center bg-gray-800 rounded-full px-2 py-1 space-x-1"> {/* bg-gray-800 əlavə edildi, border silindi */}
       {/* Models Select */}
       <Select value={selectedModel} onValueChange={setSelectedModel}>
         <SelectTrigger
-          className="w-[120px] border-none shadow-none focus:ring-0 bg-transparent text-white data-[state=open]:bg-gray-700" // data-[state=open]:bg-white/20 dəyişdirildi
+          className="w-[120px] border-none shadow-none focus:ring-0 bg-transparent text-white" // data-[state=open]:bg-gray-700 silindi
           aria-label="Select car model"
         >
           <SelectValue placeholder="Models" />
         </SelectTrigger>
-        <SelectContent className="bg-gray-700 text-white border-gray-700">
+        <SelectContent className="bg-gray-800 text-white border-gray-700"> {/* bg-gray-800 əlavə edildi */}
           <SelectItem value="all">All Models</SelectItem>
           <SelectItem value="economy">Economy</SelectItem>
           <SelectItem value="luxury">Luxury</SelectItem>
@@ -50,7 +50,7 @@ export function HeaderSearchBar() {
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-transparent text-white placeholder:text-gray-300" // bg-white/10 dəyişdirildi
+        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-transparent text-white placeholder:text-gray-300"
       />
 
       {/* Search Button */}
@@ -58,7 +58,7 @@ export function HeaderSearchBar() {
         variant="ghost"
         size="sm"
         onClick={handleSearch}
-        className="bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2" // bg-white/20 hover:bg-white/30 dəyişdirildi
+        className="bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2"
       >
         <Search className="h-4 w-4" />
       </Button>
