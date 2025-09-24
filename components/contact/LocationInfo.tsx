@@ -54,7 +54,7 @@ export function LocationInfo() {
               <div key={index} className="bg-white rounded-3xl p-8 shadow-lg animate-slide-up">
                 <div className="space-y-6">
                   <div className="flex items-center gap-3">
-                    <MapPin className="h-6 w-6 text-primary" />
+                    <MapPin className="h-6 w-6 text-destructive" />
                     <h3 className="text-xl font-bold text-gray-900">{office.title}</h3>
                   </div>
                   
@@ -88,7 +88,7 @@ export function LocationInfo() {
                 {serviceAreas.map((area, index) => (
                   <div key={index} className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <area.icon className="h-5 w-5 text-primary" />
+                      <area.icon className="h-5 w-5 text-destructive" />
                       <span className="font-medium text-gray-900">{area.area}</span>
                     </div>
                     <span className="text-sm font-medium text-green-600">{area.coverage}</span>
@@ -102,18 +102,18 @@ export function LocationInfo() {
           <div className="lg:col-span-2 space-y-8">
             {/* Map */}
             <div className="bg-white rounded-3xl p-8 shadow-lg animate-slide-up">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center relative overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-destructive/20 to-destructive/5 rounded-2xl flex items-center justify-center relative overflow-hidden">
                 <div className="text-center">
-                  <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
+                  <MapPin className="h-16 w-16 text-destructive mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Interactive Map</h3>
                   <p className="text-gray-600">
                     Find our office location and nearby car pickup points
                   </p>
                 </div>
                 {/* Decorative elements */}
-                <div className="absolute top-4 right-4 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                <div className="absolute bottom-8 left-8 w-2 h-2 bg-primary/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-primary/40 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute top-4 right-4 w-3 h-3 bg-destructive rounded-full animate-pulse"></div>
+                <div className="absolute bottom-8 left-8 w-2 h-2 bg-destructive/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-destructive/40 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
               </div>
             </div>
 
@@ -125,7 +125,7 @@ export function LocationInfo() {
                   className="bg-white rounded-2xl p-6 shadow-lg text-center hover:shadow-xl transition-shadow animate-slide-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="inline-flex p-3 rounded-xl bg-primary/10 text-primary mb-4">
+                  <div className="inline-flex p-3 rounded-xl bg-destructive/10 text-destructive mb-4">
                     <stat.icon className="h-6 w-6" />
                   </div>
                   <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
@@ -149,8 +149,8 @@ export function LocationInfo() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-0.5">
-                      <Car className="h-4 w-4 text-blue-600" />
+                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mt-0.5">
+                      <Car className="h-4 w-4 text-red-600" />
                     </div>
                     <div>
                       <h5 className="font-medium text-gray-900">Car Inspections</h5>
@@ -160,8 +160,8 @@ export function LocationInfo() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-0.5">
-                      <Building className="h-4 w-4 text-purple-600" />
+                    <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mt-0.5">
+                      <Building className="h-4 w-4 text-red-600" />
                     </div>
                     <div>
                       <h5 className="font-medium text-gray-900">Business Partnerships</h5>
