@@ -174,7 +174,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-transparent text-white hover:bg-white/10 px-8 py-6 text-lg hover-scale"
+                  className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg hover-scale"
                 >
                   Find Auto Services
                   <ArrowRight className="h-5 w-5 ml-2" />
