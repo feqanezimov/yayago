@@ -134,8 +134,8 @@ export function HeroSection() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  Connect. Share.
-                  <span className="block text-gradient">Drive Forward</span>
+                  Connect Share . Drive Forward
+                  
                 </h1>
                 <p className="text-xl text-white/80 max-w-4xl leading-relaxed">
                   Dubai's complete automotive ecosystem. Car rentals + garage services with 0% commission. Connect with car owners, renters, and trusted auto professionals.
