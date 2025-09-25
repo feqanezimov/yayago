@@ -69,6 +69,7 @@ export function AboutHero() {
             </div>
           </div>
         </div>
-      </section>
+      </div> {/* <-- Bu div çatışmırdı */}
+    </section>
   );
 }
