@@ -133,7 +133,7 @@ export function HeroSection() {
                   <span className="text-destructive text-sm font-semibold uppercase tracking-wider">Car Rental</span>
                 </div>
 
-                <h1 className="text-10xl md:text-6xl font-bold leading-tight">
+                <h1 className="text-10xl md:text-10xl font-bold leading-tight">
                   Connect Share . Drive Forward
                   
                 </h1>
