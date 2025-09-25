@@ -122,8 +122,7 @@ export function HeroSection() {
         {/* Background Pattern */}
         <div className="absolute inset-0 pattern-dots opacity-30" />
 
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-24 pt-16 pb-20 w-full">
-          {/* Dəyişiklik burada: grid lg:grid-cols-2 silindi */}
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-12 pt-16 pb-20 w-full"> {/* Dəyişiklik burada: lg:px-24 -> lg:px-12 */}
           <div className="">
             {/* Left Content */}
             <div className="text-white space-y-8 animate-fade-in">
@@ -138,7 +137,6 @@ export function HeroSection() {
                   Connect. Share.
                   <span className="block text-gradient">Drive Forward</span>
                 </h1>
-                {/* Dəyişiklik burada: max-w-lg -> max-w-4xl */}
                 <p className="text-xl text-white/80 max-w-4xl leading-relaxed">
                   Dubai's complete automotive ecosystem. Car rentals + garage services with 0% commission. Connect with car owners, renters, and trusted auto professionals.
                 </p>
