@@ -1,6 +1,5 @@
 // components/layout/HeaderSearchBar.tsx
 'use client';
-export default function HeaderSearchBar() { /* ... */ }
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -14,7 +13,7 @@ import {
 } from '@/components/ui/select';
 import { Search, ChevronDown } from 'lucide-react';
 
-export function HeaderSearchBar() {
+export function HeaderSearchBar() { // Düzgün export təyini
   const [selectedModel, setSelectedModel] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -51,7 +50,7 @@ export function HeaderSearchBar() {
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-gray-700 text-white placeholder:text-gray-400" // Dəyişikliklər burada edildi
+        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-gray-700 text-white placeholder:text-gray-400"
       />
 
       {/* Search Button */}
@@ -59,7 +58,7 @@ export function HeaderSearchBar() {
         variant="ghost"
         size="sm"
         onClick={handleSearch}
-        className="bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2" // Dəyişikliklər burada edildi
+        className="bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2"
       >
         <Search className="h-4 w-4" />
       </Button>
