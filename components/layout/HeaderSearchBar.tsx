@@ -1,5 +1,6 @@
 // components/layout/HeaderSearchBar.tsx
 'use client';
+export default function HeaderSearchBar() { /* ... */ }
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
