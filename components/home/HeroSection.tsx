@@ -162,36 +162,40 @@ export function HeroSection() {
                 </p>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="gradient-primary text-white hover:shadow-2xl transition-all px-8 py-6 text-lg hover-scale"
-                  onClick={() => setShowSearch(true)}
-                >
-                  Rent Cars & Services
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-gray-800 text-white border border-white hover:bg-gray-700 px-8 py-6 text-lg hover-scale"
-                >
-                  Find Auto Services
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
-              </div>
+                       {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              size="lg"
+              className="gradient-primary text-white hover:shadow-2xl transition-all px-8 py-6 text-lg hover-scale"
+              onClick={() => setShowSearch(true)}
+            >
+              Rent Cars & Services
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-gray-800 text-white border border-white hover:bg-gray-700 px-8 py-6 text-lg hover-scale"
+            >
+              Find Auto Services
+              <ArrowRight className="h-5 w-5 ml-2" />
+            </Button>
+          </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
-                {stats.map((stat, index) => (
-                  <div key={index} className="bg-white/10 border border-white/20 rounded-2xl p-4 text-center hover-scale">
-                    <stat.icon className="h-8 w-8 text-destructive mx-auto mb-2" />
-                    <div className="text-3xl font-bold">{stat.value}</div>
-                    <div className="text-sm text-white/80">{stat.label}</div>
-                  </div>
-                ))}
+          {/* Hero Search Widget */}
+          <HeroSearchWidget /> {/* Bu sətri əlavə edin */}
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="bg-white/10 border border-white/20 rounded-2xl p-4 text-center hover-scale">
+                <stat.icon className="h-8 w-8 text-destructive mx-auto mb-2" />
+                <div className="text-3xl font-bold">{stat.value}</div>
+                <div className="text-sm text-white/80">{stat.label}</div>
               </div>
+            ))}
+          </div>
+
 
               {/* Zero Commission Badge */}
               <div className="pt-6">
