@@ -6,16 +6,16 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { SearchForm } from '@/components/booking/SearchForm';
 import { HeaderSearchBar } from '../layout/HeaderSearchBar';
-import { HeroSearchWidget } from './HeroSearchWidget'; // YENİ: HeroSearchWidget komponentini import edirik
+import { HeroSearchWidget } from './HeroSearchWidget';
 import {
   Star,
   Users,
   Car,
   Clock,
-  ChevronDown, // Bu import artıq istifadə olunmur, lakin mövcud kodda var idi.
+  ChevronDown,
   ArrowRight,
   Menu,
-  X, // Bu import artıq istifadə olunmur, lakin mövcud kodda var idi.
+  X,
   User
 } from 'lucide-react';
 
@@ -162,7 +162,7 @@ export function HeroSection() {
                 </Button>
               </div>
 
-              {/* YENİ: Hero Search Widget komponentini buraya əlavə edirik */}
+              {/* Hero Search Widget */}
               <HeroSearchWidget />
 
               {/* Stats */}
@@ -186,6 +186,8 @@ export function HeroSection() {
             </div>
 
             {/* Right Content - Featured Car */}
+            {/* Bu hissəni tamamilə silirik və ya şərhə alırıq */}
+            {/*
             <div className="relative animate-slide-up">
               <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl hover-scale">
                 <img
@@ -202,6 +204,7 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
+            */}
           </div>
         </div>
 
