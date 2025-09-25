@@ -112,7 +112,7 @@ export function HeroSearchWidget() {
                 value={pickupDate}
                 onChange={(e) => setPickupDate(e.target.value)}
                 min={today}
-                className="w-full focus-visible:ring-destructive" // Dəyişiklik burada
+                className="flex-1 focus-visible:ring-destructive" // Dəyişiklik burada: w-full -> flex-1
                 required
               />
               <Input
@@ -120,7 +120,7 @@ export function HeroSearchWidget() {
                 type="time"
                 value={pickupTime}
                 onChange={(e) => setPickupTime(e.target.value)}
-                className="w-full focus-visible:ring-destructive" // Dəyişiklik burada
+                className="flex-1 focus-visible:ring-destructive" // Dəyişiklik burada: w-full -> flex-1
               />
             </div>
           </div>
@@ -136,7 +136,7 @@ export function HeroSearchWidget() {
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
                 min={pickupDate || today}
-                className="w-full focus-visible:ring-destructive" // Dəyişiklik burada
+                className="flex-1 focus-visible:ring-destructive" // Dəyişiklik burada: w-full -> flex-1
                 required
               />
               <Input
@@ -144,7 +144,7 @@ export function HeroSearchWidget() {
                 type="time"
                 value={returnTime}
                 onChange={(e) => setReturnTime(e.target.value)}
-                className="w-full focus-visible:ring-destructive" // Dəyişiklik burada
+                className="flex-1 focus-visible:ring-destructive" // Dəyişiklik burada: w-full -> flex-1
               />
             </div>
           </div>
