@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link'; // Link importu əlavə edildi
+import { HeroSearchWidget } from './HeroSearchWidget';
 import { Button } from '@/components/ui/button';
 import { SearchForm } from '@/components/booking/SearchForm';
 import { HeaderSearchBar } from '../layout/HeaderSearchBar'; // HeaderSearchBar importu əlavə edildi
