@@ -23,16 +23,16 @@ export function HeaderSearchBar() { // Düzgün export təyini
   };
 
   return (
-    <div className="hidden lg:flex items-center bg-gray-800 rounded-full px-2 py-1 space-x-1">
+    <div className="hidden lg:flex items-center bg-gray-900/50 backdrop-blur-lg rounded-full px-2 py-1 space-x-1"> {/* Dəyişiklik burada */}
       {/* Models Select */}
       <Select value={selectedModel} onValueChange={setSelectedModel}>
         <SelectTrigger
-          className="w-[120px] border-none shadow-none focus:ring-0 bg-gray-700 text-white"
+          className="w-[120px] border-none shadow-none focus:ring-0 bg-gray-800/50 text-white" // Dəyişiklik burada
           aria-label="Select car model"
         >
           <SelectValue placeholder="Models" />
         </SelectTrigger>
-        <SelectContent className="bg-gray-800 text-white border-gray-700">
+        <SelectContent className="bg-gray-900/70 backdrop-blur-md text-white border-gray-700"> {/* Dəyişiklik burada */}
           <SelectItem value="all">All Models</SelectItem>
           <SelectItem value="economy">Economy</SelectItem>
           <SelectItem value="luxury">Luxury</SelectItem>
@@ -50,7 +50,7 @@ export function HeaderSearchBar() { // Düzgün export təyini
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-gray-700 text-white placeholder:text-gray-400"
+        className="flex-1 border-none shadow-none focus-visible:ring-0 bg-gray-800/50 text-white placeholder:text-gray-400" // Dəyişiklik burada
       />
 
       {/* Search Button */}
@@ -58,7 +58,7 @@ export function HeaderSearchBar() { // Düzgün export təyini
         variant="ghost"
         size="sm"
         onClick={handleSearch}
-        className="bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2"
+        className="bg-gray-800/50 hover:bg-gray-700/50 text-white rounded-full p-2" // Dəyişiklik burada
       >
         <Search className="h-4 w-4" />
       </Button>
