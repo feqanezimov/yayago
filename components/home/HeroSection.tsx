@@ -1,12 +1,11 @@
-// components/home/HeroSection.tsx
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link'; // Link importu əlavə edildi
-import { HeroSearchWidget } from './HeroSearchWidget';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { SearchForm } from '@/components/booking/SearchForm';
-import { HeaderSearchBar } from '../layout/HeaderSearchBar'; // HeaderSearchBar importu əlavə edildi
+import { HeaderSearchBar } from '../layout/HeaderSearchBar';
+import { HeroSearchWidget } from './HeroSearchWidget'; // YENİ: HeroSearchWidget komponentini import edirik
 import {
   Star,
   Users,
@@ -14,14 +13,14 @@ import {
   Clock,
   ChevronDown,
   ArrowRight,
-  Menu, // Menu iconu əlavə edildi
-  X, // X iconu əlavə edildi
-  User // User iconu əlavə edildi
+  Menu,
+  X,
+  User
 } from 'lucide-react';
 
 export function HeroSection() {
   const [showSearch, setShowSearch] = useState(false);
-  const [isOpen, setIsOpen] = useState(false); // isOpen state-i əlavə edildi
+  const [isOpen, setIsOpen] = useState(false);
 
   const stats = [
     { icon: Car, value: '500+', label: 'Premium Cars' },
@@ -31,10 +30,10 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="bg-black py-8"> {/* Outer section for overall background and vertical spacing */}
-      <div className="hero-bg relative overflow-hidden rounded-3xl shadow-2xl w-full mx-auto min-h-[80vh] flex items-center"> {/* New container for image, rounded corners, shadow */}
+    <section className="bg-black py-8">
+      <div className="hero-bg relative overflow-hidden rounded-3xl shadow-2xl w-full mx-auto min-h-[80vh] flex items-center">
         {/* Integrated Navigation Bar */}
-        <nav className="absolute top-0 left-0 right-0 z-50"> {/* bg-gray-800 və border-b border-white/10 sinifləri silindi */}
+        <nav className="absolute top-0 left-0 right-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
             {/* Left: Hamburger menu and its dropdown */}
             <div className="relative flex items-center">
@@ -42,19 +41,18 @@ export function HeroSection() {
                 variant="ghost"
                 size="lg"
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-white hover:text-white hover:bg-white/10" // hover:bg-transparent dəyişdirildi
+                className="text-white hover:text-white hover:bg-white/10"
               >
                 <Menu className="h-6 w-6" />
               </Button>
 
               {/* Dropdown Menu */}
               <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-gray-900 rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top text-white ${ // bg-gray-800 əlavə edildi
+                className={`absolute top-full left-0 mt-2 w-64 bg-gray-900 rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top text-white ${
                   isOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'
                 }`}
               >
                 <div className="p-4 space-y-2">
-                  {/* Navigasyon Linkleri */}
                   <Link
                     href="/cars"
                     className="block hover:text-primary transition-colors font-medium"
@@ -98,7 +96,6 @@ export function HeroSection() {
                     Contact
                   </Link>
                   <div className="pt-4 space-y-3 border-t border-gray-200">
-                    {/* Sign In and Dashboard moved here */}
                     <Link href="/signin" onClick={() => setIsOpen(false)}>
                       <Button variant="ghost" className="w-full bg-transparent text-gray-900 hover:bg-gray-100 justify-start">
                         <User className="h-4 w-4 mr-2" />
@@ -142,7 +139,7 @@ export function HeroSection() {
         {/* Background Pattern */}
         <div className="absolute inset-0 pattern-dots opacity-30" />
 
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-24 pt-16 pb-20 w-full"> {/* lg:px-16 dəyişdirildi */}
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-24 pt-16 pb-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-white space-y-8 animate-fade-in">
@@ -162,38 +159,39 @@ export function HeroSection() {
                 </p>
               </div>
 
-                               {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              size="lg"
-              className="gradient-primary text-white hover:shadow-2xl transition-all px-8 py-6 text-lg hover-scale"
-              onClick={() => setShowSearch(true)}
-            >
-              Rent Cars & Services
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-gray-800 text-white border border-white hover:bg-gray-700 px-8 py-6 text-lg hover-scale"
-            >
-              Find Auto Services
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-white/10 border border-white/20 rounded-2xl p-4 text-center hover-scale">
-                <stat.icon className="h-8 w-8 text-destructive mx-auto mb-2" />
-                <div className="text-3xl font-bold">{stat.value}</div>
-                <div className="text-sm text-white/80">{stat.label}</div>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="gradient-primary text-white hover:shadow-2xl transition-all px-8 py-6 text-lg hover-scale"
+                  onClick={() => setShowSearch(true)}
+                >
+                  Rent Cars & Services
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-gray-800 text-white border border-white hover:bg-gray-700 px-8 py-6 text-lg hover-scale"
+                >
+                  Find Auto Services
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
               </div>
-            ))}
-          </div>
 
+              {/* YENİ: Hero Search Widget komponentini buraya əlavə edirik */}
+              <HeroSearchWidget />
 
+              {/* Stats */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
+                {stats.map((stat, index) => (
+                  <div key={index} className="bg-white/10 border border-white/20 rounded-2xl p-4 text-center hover-scale">
+                    <stat.icon className="h-8 w-8 text-destructive mx-auto mb-2" />
+                    <div className="text-3xl font-bold">{stat.value}</div>
+                    <div className="text-sm text-white/80">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
 
               {/* Zero Commission Badge */}
               <div className="pt-6">
