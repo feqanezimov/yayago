@@ -162,7 +162,7 @@ export function HeroSection() {
                 </p>
               </div>
 
-                       {/* CTA Buttons */}
+                               {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
@@ -182,9 +182,6 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Hero Search Widget */}
-          <HeroSearchWidget /> {/* Bu sətri əlavə edin */}
-
           {/* Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
             {stats.map((stat, index) => (
@@ -195,6 +192,7 @@ export function HeroSection() {
               </div>
             ))}
           </div>
+
 
 
               {/* Zero Commission Badge */}
