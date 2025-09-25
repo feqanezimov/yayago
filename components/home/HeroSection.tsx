@@ -123,7 +123,7 @@ export function HeroSection() {
         <div className="absolute inset-0 pattern-dots opacity-30" />
 
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-24 pt-16 pb-20 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="">
             {/* Left Content */}
             <div className="text-white space-y-8 animate-fade-in">
               <div className="space-y-4">
