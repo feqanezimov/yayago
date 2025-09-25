@@ -102,7 +102,7 @@ export function HeroSearchWidget() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="pickupDateTime" className="text-gray-700 flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-destructive" />
+              {/* <Calendar className="h-4 w-4 text-destructive" /> */} {/* Bu ikon silindi */}
               Pick Up Date & Time
             </Label>
             <div className="flex gap-2">
@@ -112,7 +112,7 @@ export function HeroSearchWidget() {
                 value={pickupDate}
                 onChange={(e) => setPickupDate(e.target.value)}
                 min={today}
-                className="flex-1 focus-visible:ring-destructive" // Dəyişiklik burada: w-full -> flex-1
+                className="flex-1 min-w-0 focus-visible:ring-destructive" // min-w-0 əlavə edildi
                 required
               />
               <Input
@@ -120,13 +120,13 @@ export function HeroSearchWidget() {
                 type="time"
                 value={pickupTime}
                 onChange={(e) => setPickupTime(e.target.value)}
-                className="flex-1 focus-visible:ring-destructive" // Dəyişiklik burada: w-full -> flex-1
+                className="flex-1 min-w-0 focus-visible:ring-destructive" // min-w-0 əlavə edildi
               />
             </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="returnDateTime" className="text-gray-700 flex items-center gap-2">
-              <Clock className="h-4 w-4 text-destructive" />
+              {/* <Clock className="h-4 w-4 text-destructive" /> */} {/* Bu ikon silindi */}
               Return Date & Time
             </Label>
             <div className="flex gap-2">
@@ -136,7 +136,7 @@ export function HeroSearchWidget() {
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
                 min={pickupDate || today}
-                className="flex-1 focus-visible:ring-destructive" // Dəyişiklik burada: w-full -> flex-1
+                className="flex-1 min-w-0 focus-visible:ring-destructive" // min-w-0 əlavə edildi
                 required
               />
               <Input
@@ -144,7 +144,7 @@ export function HeroSearchWidget() {
                 type="time"
                 value={returnTime}
                 onChange={(e) => setReturnTime(e.target.value)}
-                className="flex-1 focus-visible:ring-destructive" // Dəyişiklik burada: w-full -> flex-1
+                className="flex-1 min-w-0 focus-visible:ring-destructive" // min-w-0 əlavə edildi
               />
             </div>
           </div>
