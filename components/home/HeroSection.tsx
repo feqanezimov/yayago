@@ -31,7 +31,7 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="bg-black">
+    <section className="bg-black py-8">
       <div className="hero-bg relative overflow-hidden rounded-3xl shadow-2xl w-full mx-auto min-h-[80vh] flex items-center">
         {/* Integrated Navigation Bar */}
         <nav className="absolute top-0 left-0 right-0 z-50">
