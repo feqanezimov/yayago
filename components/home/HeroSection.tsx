@@ -2,27 +2,32 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { HeroSearchWidget } from './HeroSearchWidget';
 import { Button } from '@/components/ui/button';
 import { SearchForm } from '@/components/booking/SearchForm';
 import { HeaderSearchBar } from '../layout/HeaderSearchBar';
-import { HeroSearchWidget } from './HeroSearchWidget'; // YENİ: HeroSearchWidget komponentini import edirik
 import {
   Star,
   Users,
   Car,
   Clock,
-  ChevronDown,
   ArrowRight,
   Menu,
-  X,
   User
 } from 'lucide-react';
+import type { ElementType } from 'react';
+
+type StatItem = {
+  icon: ElementType;
+  value: string;
+  label: string;
+};
 
 export function HeroSection() {
   const [showSearch, setShowSearch] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const stats = [
+  const stats: StatItem[] = [
     { icon: Car, value: '500+', label: 'Premium Cars' },
     { icon: Users, value: '10K+', label: 'Happy Customers' },
     { icon: Clock, value: '24/7', label: 'Support' },
@@ -32,72 +37,54 @@ export function HeroSection() {
   return (
     <section className="bg-black py-8">
       <div className="hero-bg relative overflow-hidden rounded-3xl shadow-2xl w-full mx-auto min-h-[80vh] flex items-center">
-        {/* Integrated Navigation Bar */}
+        {/* Nav */}
         <nav className="absolute top-0 left-0 right-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-16 flex items-center justify-between">
-            {/* Left: Hamburger menu and its dropdown */}
+            {/* Left: Hamburger */}
             <div className="relative flex items-center">
               <Button
                 variant="ghost"
                 size="lg"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => setIsOpen((v) => !v)}
                 className="text-white hover:text-white hover:bg-white/10"
+                aria-haspopup="menu"
+                aria-expanded={isOpen}
+                aria-controls="main-nav-dropdown"
               >
                 <Menu className="h-6 w-6" />
               </Button>
 
-              {/* Dropdown Menu */}
+              {/* Dropdown */}
               <div
+                id="main-nav-dropdown"
                 className={`absolute top-full left-0 mt-2 w-64 bg-gray-900 rounded-lg shadow-lg z-[60] transition-all duration-300 ease-in-out origin-top text-white ${
                   isOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'
                 }`}
+                role="menu"
               >
                 <div className="p-4 space-y-2">
-                  <Link
-                    href="/cars"
-                    className="block hover:text-primary transition-colors font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/cars" className="block hover:text-primary transition-colors font-medium" onClick={() => setIsOpen(false)}>
                     Find Cars
                   </Link>
-                  <Link
-                    href="/garages"
-                    className="block hover:text-primary transition-colors font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/garages" className="block hover:text-primary transition-colors font-medium" onClick={() => setIsOpen(false)}>
                     Auto Services
                   </Link>
-                  <Link
-                    href="/list-car"
-                    className="block hover:text-primary transition-colors font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/list-car" className="block hover:text-primary transition-colors font-medium" onClick={() => setIsOpen(false)}>
                     List Your Car
                   </Link>
-                  <Link
-                    href="/how-it-works"
-                    className="block hover:text-primary transition-colors font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/how-it-works" className="block hover:text-primary transition-colors font-medium" onClick={() => setIsOpen(false)}>
                     How It Works
                   </Link>
-                  <Link
-                    href="/about"
-                    className="block hover:text-primary transition-colors font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/about" className="block hover:text-primary transition-colors font-medium" onClick={() => setIsOpen(false)}>
                     About Us
                   </Link>
-                  <Link
-                    href="/contact"
-                    className="block hover:text-primary transition-colors font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/contact" className="block hover:text-primary transition-colors font-medium" onClick={() => setIsOpen(false)}>
                     Contact
                   </Link>
-                  <div className="pt-4 space-y-3 border-t border-gray-200">
+
+                  <div className="pt-4 space-y-3 border-t border-gray-700">
                     <Link href="/signin" onClick={() => setIsOpen(false)}>
-                      <Button variant="ghost" className="w-full bg-transparent text-gray-900 hover:bg-gray-100 justify-start">
+                      <Button variant="ghost" className="w-full bg-transparent text-white hover:bg-white/10 justify-start">
                         <User className="h-4 w-4 mr-2" />
                         Sign In
                       </Button>
@@ -108,7 +95,7 @@ export function HeroSection() {
                       </Button>
                     </Link>
                     <Link href="/dashboard" onClick={() => setIsOpen(false)}>
-                      <Button variant="ghost" className="w-full bg-transparent text-gray-900 hover:bg-gray-100 justify-start">
+                      <Button variant="ghost" className="w-full bg-transparent text-white hover:bg-white/10 justify-start">
                         <User className="h-4 w-4 mr-2" />
                         Dashboard
                       </Button>
@@ -136,15 +123,14 @@ export function HeroSection() {
           </div>
         </nav>
 
-        {/* Background Pattern */}
+        {/* Background pattern */}
         <div className="absolute inset-0 pattern-dots opacity-30" />
 
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-24 pt-16 pb-20 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+            {/* Left */}
             <div className="text-white space-y-8 animate-fade-in">
               <div className="space-y-4">
-                {/* Red accent line and "CAR RENTAL" text */}
                 <div className="flex items-center gap-2">
                   <div className="bg-destructive h-1 w-16 rounded-full" />
                   <span className="text-destructive text-sm font-semibold uppercase tracking-wider">Car Rental</span>
@@ -155,11 +141,11 @@ export function HeroSection() {
                   <span className="block text-gradient">Drive Forward</span>
                 </h1>
                 <p className="text-xl text-white/80 max-w-lg leading-relaxed">
-                  Dubai's complete automotive ecosystem. Car rentals + garage services with 0% commission. Connect with car owners, renters, and trusted auto professionals.
+                  Dubai&apos;s complete automotive ecosystem. Car rentals + garage services with 0% commission. Connect with car owners, renters, and trusted auto professionals.
                 </p>
               </div>
 
-              {/* CTA Buttons */}
+              {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
@@ -179,30 +165,33 @@ export function HeroSection() {
                 </Button>
               </div>
 
-              {/* YENİ: Hero Search Widget komponentini buraya əlavə edirik */}
+              {/* Booking widget (red-themed layout like purple site) */}
               <HeroSearchWidget />
 
               {/* Stats */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
-                {stats.map((stat, index) => (
-                  <div key={index} className="bg-white/10 border border-white/20 rounded-2xl p-4 text-center hover-scale">
-                    <stat.icon className="h-8 w-8 text-destructive mx-auto mb-2" />
-                    <div className="text-3xl font-bold">{stat.value}</div>
-                    <div className="text-sm text-white/80">{stat.label}</div>
-                  </div>
-                ))}
+                {stats.map((stat, index) => {
+                  const Icon = stat.icon;
+                  return (
+                    <div key={index} className="bg-white/10 border border-white/20 rounded-2xl p-4 text-center hover-scale">
+                      <Icon className="h-8 w-8 text-destructive mx-auto mb-2" />
+                      <div className="text-3xl font-bold">{stat.value}</div>
+                      <div className="text-sm text-white/80">{stat.label}</div>
+                    </div>
+                  );
+                })}
               </div>
 
-              {/* Zero Commission Badge */}
+              {/* Zero Commission */}
               <div className="pt-6">
                 <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full px-6 py-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
                   <span className="text-white font-semibold">0% Commission - Keep 100% of Your Earnings</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Content - Featured Car */}
+            {/* Right: Featured Car */}
             <div className="relative animate-slide-up">
               <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl hover-scale">
                 <img
@@ -222,7 +211,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Search Form Overlay */}
+        {/* Search Overlay */}
         {showSearch && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="glass rounded-3xl p-8 max-w-4xl w-full animate-slide-up">
@@ -233,6 +222,7 @@ export function HeroSection() {
                   size="sm"
                   onClick={() => setShowSearch(false)}
                   className="text-white hover:bg-white/10"
+                  aria-label="Close search"
                 >
                   ✕
                 </Button>
@@ -243,12 +233,12 @@ export function HeroSection() {
         )}
       </div>
 
-      {/* Arxa Plan Karartma Katmanı */}
+      {/* Backdrop for open menu */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ease-in-out"
           onClick={() => setIsOpen(false)}
-        ></div>
+        />
       )}
     </section>
   );
