@@ -1,53 +1,51 @@
-'use client'; // Bu komponentin client tərəfində işlədiyini göstərir
+'use client';
 
-import { useState, useCallback } from 'react'; // React hooklarını import edirik
-import { useRouter } from 'next/navigation'; // Next.js router hookunu import edirik
-import { Button } from '@/components/ui/button'; // UI düymə komponentini import edirik
-import { Input } from '@/components/ui/input'; // UI giriş komponentini import edirik
-import { Label } from '@/components/ui/label'; // UI etiket komponentini import edirik
+import { useState, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import {
   Tabs,
   TabsList,
   TabsTrigger,
-} from '@/components/ui/tabs'; // Radix UI Tabs komponentlərini import edirik
+} from '@/components/ui/tabs';
 import {
-  MapPin, // Xəritə nişanı ikonu
-  Calendar, // Təqvim ikonu
-  Clock, // Saat ikonu
-  Search, // Axtarış ikonu
-} from 'lucide-react'; // Lucide ikonlarını import edirik
+  MapPin,
+  Calendar,
+  Clock,
+  Search,
+} from 'lucide-react';
 
 export function HeroSearchWidget() {
-  const router = useRouter(); // Router obyektini əldə edirik
-  const [vehicleType, setVehicleType] = useState('all'); // Seçilmiş avtomobil növü üçün state
-  const [pickupLocation, setPickupLocation] = useState(''); // Götürmə yeri üçün state
-  const [dropoffLocation, setDropoffLocation] = useState(''); // Təhvil vermə yeri üçün state
-  const [pickupDate, setPickupDate] = useState(''); // Götürmə tarixi üçün state
-  const [pickupTime, setPickupTime] = useState('10:00'); // Götürmə vaxtı üçün state
-  const [returnDate, setReturnDate] = useState(''); // Qaytarma tarixi üçün state
-  const [returnTime, setReturnTime] = useState('10:00'); // Qaytarma vaxtı üçün state
+  const router = useRouter();
+  const [vehicleType, setVehicleType] = useState('all');
+  const [pickupLocation, setPickupLocation] = useState('');
+  const [dropoffLocation, setDropoffLocation] = useState('');
+  const [pickupDate, setPickupDate] = useState('');
+  const [pickupTime, setPickupTime] = useState('10:00');
+  const [returnDate, setReturnDate] = useState('');
+  const [returnTime, setReturnTime] = useState('10:00');
 
-  // Axtarış düyməsinə basıldıqda işə düşən funksiya
   const handleSearch = useCallback((e: React.FormEvent) => {
-    e.preventDefault(); // Səhifənin yenilənməsinin qarşısını alırıq
+    e.preventDefault();
 
-    const params = new URLSearchParams(); // URL sorğu parametrləri üçün yeni obyekt yaradırıq
-    params.set('vehicleType', vehicleType); // Avtomobil növünü əlavə edirik
-    if (pickupLocation) params.set('pickupLocation', pickupLocation); // Götürmə yerini əlavə edirik (əgər varsa)
-    if (dropoffLocation) params.set('dropoffLocation', dropoffLocation); // Təhvil vermə yerini əlavə edirik (əgər varsa)
-    if (pickupDate) params.set('pickupDate', pickupDate); // Götürmə tarixini əlavə edirik (əgər varsa)
-    if (pickupTime) params.set('pickupTime', pickupTime); // Götürmə vaxtını əlavə edirik (əgər varsa)
-    if (returnDate) params.set('returnDate', returnDate); // Qaytarma tarixini əlavə edirik (əgər varsa)
-    if (returnTime) params.set('returnTime', returnTime); // Qaytarma vaxtını əlavə edirik (əgər varsa)
+    const params = new URLSearchParams();
+    params.set('vehicleType', vehicleType);
+    if (pickupLocation) params.set('pickupLocation', pickupLocation);
+    if (dropoffLocation) params.set('dropoffLocation', dropoffLocation);
+    if (pickupDate) params.set('pickupDate', pickupDate);
+    if (pickupTime) params.set('pickupTime', pickupTime);
+    if (returnDate) params.set('returnDate', returnDate);
+    if (returnTime) params.set('returnTime', returnTime);
 
-    router.push(`/cars?${params.toString()}`); // '/cars' səhifəsinə sorğu parametrləri ilə yönləndiririk
+    router.push(`/cars?${params.toString()}`);
   }, [vehicleType, pickupLocation, dropoffLocation, pickupDate, pickupTime, returnDate, returnTime, router]);
 
-  const today = new Date().toISOString().split('T')[0]; // Bu günün tarixini YYYY-MM-DD formatında əldə edirik
+  const today = new Date().toISOString().split('T')[0];
 
   return (
     <div className="relative z-10 bg-white rounded-3xl p-8 shadow-xl mx-auto mt-12 lg:mt-16 max-w-4xl w-full">
-      {/* Avtomobil növü seçimi üçün tablar */}
       <Tabs value={vehicleType} onValueChange={setVehicleType} className="mb-6">
         <TabsList className="grid w-full grid-cols-3 h-auto p-1 bg-gray-100 rounded-xl">
           <TabsTrigger
@@ -71,10 +69,8 @@ export function HeroSearchWidget() {
         </TabsList>
       </Tabs>
 
-      {/* Axtarış forması */}
       <form onSubmit={handleSearch} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {/* Götürmə yeri sahəsi */}
           <div className="space-y-2">
             <Label htmlFor="pickupLocation" className="text-gray-700 flex items-center gap-2">
               <MapPin className="h-4 w-4 text-destructive" />
@@ -86,11 +82,10 @@ export function HeroSearchWidget() {
               placeholder="Dubai Mall, UAE"
               value={pickupLocation}
               onChange={(e) => setPickupLocation(e.target.value)}
-              className="focus-visible:ring-destructive" // Fokus zamanı qırmızı halqa
+              className="focus-visible:ring-destructive"
               required
             />
           </div>
-          {/* Təhvil vermə yeri sahəsi */}
           <div className="space-y-2">
             <Label htmlFor="dropoffLocation" className="text-gray-700 flex items-center gap-2">
               <MapPin className="h-4 w-4 text-destructive" />
@@ -105,7 +100,6 @@ export function HeroSearchWidget() {
               className="focus-visible:ring-destructive"
             />
           </div>
-          {/* Götürmə tarixi və vaxtı sahələri */}
           <div className="space-y-2">
             <Label htmlFor="pickupDateTime" className="text-gray-700 flex items-center gap-2">
               <Calendar className="h-4 w-4 text-destructive" />
@@ -117,8 +111,8 @@ export function HeroSearchWidget() {
                 type="date"
                 value={pickupDate}
                 onChange={(e) => setPickupDate(e.target.value)}
-                min={today} // Keçmiş tarixləri qadağan edir
-                className="focus-visible:ring-destructive"
+                min={today}
+                className="w-full focus-visible:ring-destructive" // Dəyişiklik burada
                 required
               />
               <Input
@@ -126,11 +120,10 @@ export function HeroSearchWidget() {
                 type="time"
                 value={pickupTime}
                 onChange={(e) => setPickupTime(e.target.value)}
-                className="focus-visible:ring-destructive"
+                className="w-full focus-visible:ring-destructive" // Dəyişiklik burada
               />
             </div>
           </div>
-          {/* Qaytarma tarixi və vaxtı sahələri */}
           <div className="space-y-2">
             <Label htmlFor="returnDateTime" className="text-gray-700 flex items-center gap-2">
               <Clock className="h-4 w-4 text-destructive" />
@@ -142,8 +135,8 @@ export function HeroSearchWidget() {
                 type="date"
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
-                min={pickupDate || today} // Götürmə tarixindən əvvəlki tarixləri qadağan edir
-                className="focus-visible:ring-destructive"
+                min={pickupDate || today}
+                className="w-full focus-visible:ring-destructive" // Dəyişiklik burada
                 required
               />
               <Input
@@ -151,13 +144,12 @@ export function HeroSearchWidget() {
                 type="time"
                 value={returnTime}
                 onChange={(e) => setReturnTime(e.target.value)}
-                className="focus-visible:ring-destructive"
+                className="w-full focus-visible:ring-destructive" // Dəyişiklik burada
               />
             </div>
           </div>
         </div>
 
-        {/* Axtarış düyməsi */}
         <Button
           type="submit"
           size="lg"
